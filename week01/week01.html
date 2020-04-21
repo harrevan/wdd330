@@ -6,6 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    THIS WILL BE WEEK 01
+    <h1>Local Storage</h1>
+    <p> <b>Section tag</b> fills width of page. Can be used to keep elements on the same line.</p>
+    <p>
+        Local storage uses key-value pairs to store (localStorage.<b>setItem(key, value)</b>) and load (localStorage.<b>getItem(key)</b>) 
+        saved data.<br>
+        From W3 schools: "Local storage objects The localStorage object stores the data <b>with no expiration date</b>. 
+        The data will not be deleted when the browser is closed, and will be available the next day, week, or year."
+     </p>
+     <p>
+         Two examples of setting and getting data from local storage:<br>
+         1.) //Store:<br> 
+         localStorage.setItem("lastname", "Smith"); <br>
+         // Retrieve<br>
+         document.getElementById("result").innerHTML = localStorage.getItem("lastname");<br><br>
+         2.) // Store<br>
+         localStorage.lastname = "Smith";<br>
+         // Retrieve<br>
+         document.getElementById("result").innerHTML = localStorage.lastname;<br>
+     </p>
+     <p>
+         To remove an item from local storage: localStorage.removeItem(key);
+
+     </p>
 </body>
 </html>
