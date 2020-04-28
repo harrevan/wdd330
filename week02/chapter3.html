@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="header">
+        <p>Javascript: Novice to Ninja- Chapter 3: Arrays, Logic, and Loops</p>
+    </div> 
+    <p>
+        <b>Arrays</b><br>
+        Best to create an array using array literal: const myArray = [];<br>
+        Arrays <i>don't</i> have to have the same data types inside. Variety of data types can be used (including another array).<br>
+        EX: const mixedArray = [ null, 1, [], 'two', true ];<br>
+        Length property of an array is <b>mutable</b> (can be changed.)<br>
+        <br>
+        <b>Merging Arrays</b>
+        use concat(['item1', 'item2', etc]) to merge arrays. Merging does not change original array. Use assignment operator to update.<br>
+        EX: avengers = avengers.concat(['Hulk','Hawkeye', 'Black Widow']);<br>
+        output: ['Captain America', 'Iron Man', 'Thor', 'Hulk', 'Hawkeye', 'Black Widow']<br>
+        An alternative is to use the spread operator (three dots) ...<br>
+        EX: avengers = [ ...avengers, ...['Hulk','Hawkeye', 'Black Widow'] ];<br>
+        output: ['Captain America', 'Iron Man', 'Thor', 'Hulk', 'Hawkeye', 'Black Widow']<br>
+        <br>
+        <b<>Multi-Dimentional Arrays</b><br>
+        Flatten Multi-dimensional arrays ising the spread operator (...)<br>
+        <br>
+        <b>Sets</b>
+        A set is a data structure representing a collection of unique values. NO DUPLICATES<br>
+        Good for checking if values have been duplicated, faster to check than an array.<br>
+        All non-primitive values are considered unique, even if they contain the same values.<br>
+    </p>
+
+</body>
+</html>
