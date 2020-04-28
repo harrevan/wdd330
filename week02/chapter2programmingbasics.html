@@ -10,6 +10,89 @@
     <div class="header">
         <p>Javascript: Novice to Ninja- Chapter 2: Programming Basics </p>
     </div> 
-    
+    <p>
+        <b>Grammar</b><br>
+        Note, statements in javascript are ended with either a new line or a semi-colon. Best practice dictates<br>
+        the use of semi-colon with the new line.<br>
+    </p>
+    <p>
+        <b>Reserved Words:</b><br>
+        abstract, await, boolean, break, byte, case, catch, char, class, const, continue, debugger, default, delete,<br> 
+        do, double, else, enum, export, extends, false, final, finally, float, for, function, goto, if, implements,<br>  
+        import, in instanceof, int, interface, let, long, native, new, null, package, private, protected, public, return,<br> 
+        short, static, super, switch, synchronized, this, throw, throws, transient, true, try, typeof, var, volatile, void,<br>  
+        while, with, yield<br> 
+        <br>
+        Should be reserved: undefined, NaN, Infinity<br>
+    </p>
+    <p>
+        <b>Data Types</b><br>
+        6 primitive:<br>
+        &emsp; String<br>
+        &emsp; Symbol<br>
+        &emsp; Number<br>
+        &emsp; Boolean<br>
+        &emsp; Undefined<br>
+        &emsp; null<br>
+        Objects are the 7th type: arrays, functions, object literals.<br>
+        <br>
+        typeof operator shows value of value. EX: typeof 'hello';<br>
+    </p>
+    <p>
+        <b>Variables</b><br>
+        const - declares variable not to be reassigned<br>
+        let - variable might be reassigned<br>
+        <br>
+        If a non-primitive variable is declared with const, it is not immutable. (Underlying data in object)<br>
+        can change, aka mutated.<br>
+        EX:<br>
+        const name = { value: 'Alexa' }; // an object<br>
+        name.value = 'Siri'; // change the value<br>
+        <br>
+        const DOES prevent assigning a variable to another object.<br>
+        EX:<br>
+        // declare object<br>
+        const name = { value: 'Alexa' };<br>
+        // attempt to reassign to another object<br>
+        name = { value: 'Siri' }<br>
+        produces a TypeError: Assignment to constant variable.<br>
+        let and const both have block scope<br>
+        <br>
+        Best to use Camel Case when naming constants, variables, and functions.<br>
+        <br>
+        Assiging primitive values to a variable changes the value.<br>
+        Assigning non-primitive values to a variable is done <b>by reference</b>. changes will affect all references to the object.<br>
+        EX:<br>
+        const c = { value: 1 };<br>
+        let d = c; // c.value = 1, d.value = 1<br>
+        d.value = 2; // c.value = 2, d.value = 2<br>
+        <br>
+        Use \ as escape characters<br>
+        <br>
+        <b>Wrapper Objects</b> are created for primitive data types to allow them to have properties and methods.<br>
+        Properties can be accessed with . or []. For example, name.length or name['length'].<br>
+        Properties of primitive data types are <b>immutible</b>.<br>
+    </p>
+    <p>
+        <b>Template Literals</b><br>
+        Deliminated using backtick `. EX: `Hello!`<br>
+        Can use both types of quote marks. Also allows for <b>interpolation</b>. Javascript expressions can be inserted in the string<br>
+        EX:<br>
+        const name = `Siri`;<br>
+        `Hello ${ name }!`;<br>
+        output: 'Hello Siri!'<br>
+        const age = 39;<br>
+        `I will be ${ age + 1 } next year`;<br>
+        output: 'I will be 40 next year'<br>
+    </p>
+    <p>
+        <b>Symbols</b>
+        Used to create unique values.<br>
+        Don't have a literal form. Have to use =Symbol('include a description here');<br>
+    </p>
+
+
+    <h1>Questions</h1>
+    <p>When declaring a variable, is it best practice to use 'let' instead of 'var' or does it matter?</p>
 </body>
 </html>
