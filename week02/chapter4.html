@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        // Sort Array with a callback
+        function numerically(a,b){
+            return a-b;
+        }
+        
+        const array = [5,6,4,34,63,1,99,6];
+        array.sort(numerically);
+        console.log(array);
+
+    </script>
+</head>
+<body>
+    <div class="header">
+        <p>Javascript: Novice to Ninja- Chapter 4: Functions</p>
+    </div> 
+    <h2>Defining a Function</h2>
+    <p>3 ways to define functions in javascript</p>
+    <h3>Function Declarations (Function literal)</h3>
+    <p>
+        function hello(){<br>
+        console.log('Hello World!');<br>
+        }
+    </p>
+    <h3>Function Expressions</h3>
+    <p>Assigns an anonymous function to a variable.</p>
+    <p>
+        const goodbye = function(){<br>
+        console.log('Goodbye World!');<br>
+        };
+    </p>
+    <p>Can also be created with a named function</p>
+    <p> 
+        const goodbye = function bye(){<br>
+        console.log('Goodbye World!');<br>
+         };
+    </p>
+    <h2>Function Declarations</h2>
+    <p>Declare function using the constructor Function()</p>
+    <p>const hi = new Function('console.log("Hi World!");');</p>>
+    <p>NOT RECOMMENDED</p>
+
+    <h2>Variable Numbers of Arguments</h2>
+    <p>
+        Use the rest operator (...) in front of the last parameter in a function declaration to collect all<br> 
+        arguments entered into an array. Helpful if number of arguments taken is unknown 
+    </p>
+    <h2>Default Parameters</h2>
+    <p>Used to specify default parameter values in a function</p>
+    <p>
+        function hello(name='World') {<br>
+            console.log(`Hello ${name}!);<br>
+        }<br>
+        If function is called without an argument, name parameter will be 'World'
+    </p>
+    <p>Default parameters should ALWAYS come after non-default parameters</p>
+    <h2>Function Hoisting</h2>
+    <p>
+        Hoisting is when Javascript Interpreter moves all variable and function declarations to the top of the current scope.<br>
+        This allows functions to be invoked before they are defined.<br>
+        Variable assignment is not hoisted.
+    </p>
+    <h2>Callbacks</h2>
+    <p>Functions that are passed as arguments to another function. Is then invoked inside body of function</p>
+    <p>Can use anonymous functions as well.</p>
+    <p>
+        function sing(song,callback) {<br>
+        console.log(`I'm singing along to ${song}.`);<br>
+        callback();<br>
+        }
+    </p>
+    <h2>Array Iterators</h2>
+    <h3>forEach()</h3>
+    <p>
+        Loops over array and invoke a callback function on each element in an array.
+    </p>
+    <h3>map()</h3>
+    <p>Similar to forEach(). Creates a new array with results of callback</p>
+    <h3>reduce()</h3>
+    <p>Cumulatively combines results to return a single value. Callback function used to describe how to combine each value of the array with the running total.</p>
+    <p>
+        [1,2,3,4,5].reduce( (acc,val) => prev + val );<br>
+        output is 15
+    </p>
+    <h3>filter()</h3>
+    <p>"Returns a new array that only contains items from the original array that return true when passed to the callback"</p>
+
+    <h2>Chaining Iterators Together</h2> 
+    <p>Methods can be chained together on arrays for more powerful transformations.</p>
+</body>
+</html>
