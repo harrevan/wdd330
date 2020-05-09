@@ -15,6 +15,18 @@ function doSomething(event){
     console.log('up') );  
     const dblclickParagraph = document.getElementById('dblclick');
     dblclickParagraph.addEventListener('dblclick',highlight);
+
+    //Mouse Over
+    const mouseParagraph = document.getElementById('mouse');
+    mouseParagraph.addEventListener('mouseover', highlight);
+    mouseParagraph.addEventListener('mouseout', highlight);
+
+    // Stopp Default Behavior
+    const brokenLink = document.getElementById('broken');
+    brokenLink.addEventListener('click',(event) => {
+    event.preventDefault();
+    console.log('Broken Link!');
+    });
   
 }
 
