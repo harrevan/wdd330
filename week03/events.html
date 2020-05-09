@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="header">
+        <p>JavaScript: Novice to Ninja Chapter 7:Events </p>
+    </div> 
+    <h1>Event Listeners</h1>
+    <p>Event listeners are added to elements, are part of DOM. EX: document.body.addEventListener("click", doSomething);</p>
+    <h1>Inline Event Handlers</h1>
+    <p>
+        Original way of dealing with events. <b>Not recommended for the following reasons:</b><br>
+        JavaScript should be kept out of HTML.<br>
+        Only one event handler for each event-type can be attached to an element.<br>
+        Event handler code hidden away in markup, making identification difficult.<br>
+        JavaScript entered as string, making quotes a problem at times.
+    </p>
+    <p>
+        Recommended: Use EVENT LISTENERS<br>
+        EX: document.body.addEventListener('click',doSomething);<br>
+        Parentheses excluded. If included, function is called when event listener is set.
+    </p>
+    <h1>The Event Object</h1>
+    <p>When event handler is triggered by an event, the callback function is called.</p>
+    <h1>Event Propogation</h1>
+    <p>Clicking one event clicks all elements it is nested inside of.</p>
+    <p>Event propogation is the order that the events fire on each element. 2 types:</p>
+    <p>Bubbling- when event fires on the element clicked on first, then bubbles up document tree firing event on each parent event.</p>
+    <p>Capturing starts by firing an event on the root element, then propogates downwards.</p>
+
+
+</body>
+</html>
