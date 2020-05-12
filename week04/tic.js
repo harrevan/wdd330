@@ -9,8 +9,7 @@ function turn(){
     clickCount++;
 }
 function reset(){
-    location.reload();
-}
+    location = self.location;
 
 // Add event listener to each cell in table
 document.querySelectorAll('#board td').forEach(e => e.addEventListener("touchend",turn));
