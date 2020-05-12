@@ -1,5 +1,6 @@
 // var to keep track of click counts (to represent player turns)
 let clickCount = 0;
+
 function turn(){
     // Alternate betwen X and O turns. X plays first.
     if (clickCount % 2 === 0){
@@ -8,7 +9,7 @@ function turn(){
     else{
         this.innerHTML = 'O';
     }
-    
+
     clickCount++;
 }
 function reset(){
