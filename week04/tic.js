@@ -9,7 +9,7 @@ function turn(){
     clickCount++;
 }
 function reset(){
-    location = self.location;
+    self.location.reload();
 }
 
 // Add event listener to each cell in table
