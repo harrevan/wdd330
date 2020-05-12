@@ -4,4 +4,4 @@ function turn(){
 
 }
 
-document.getElementById("board").addEventListener('touchend', turn);
+document.getElementById("cell1").addEventListener('touchend', turn);
