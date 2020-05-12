@@ -1,6 +1,7 @@
 function turn(){
+
     alert("Got me!");
 
 }
 
-addEventListener('touchend', turn);
+document.getElementById("board").addEventListener('touchend', turn);
