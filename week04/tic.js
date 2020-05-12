@@ -1,7 +1,16 @@
+let clickCount = 0;
 function turn(){
-
-    alert("Got me!");
+    if (clickCount % 2 === 0){
+        this.innerHTML = 'X';
+    }
+    else{
+        this.innerHTML = 'O';
+    }
+    clickCount++;
+    
+   
 
 }
 
-document.getElementById("cell1").addEventListener('touchend', turn);
+// Add event listener to each cell in table
+document.querySelectorAll('#board td').forEach(e => e.addEventListener("touchend",turn))
