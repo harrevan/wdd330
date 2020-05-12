@@ -9,7 +9,7 @@ function turn(){
     clickCount++;
 }
 function reset(){
-    document.getElementById('board').innerHTML = "";
+    location.reload();
 }
 
 // Add event listener to each cell in table
