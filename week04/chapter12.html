@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 04</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="header">
+        <p>Javascript: Novice to Ninja Chapter 12: Object Oriented Programming in JavaScript</p>
+    </div> 
+    <h1>Object Oriented Programming</h1>
+    <p>Three main Concepts: encapsulation, polymorphism, inheritance.</p>
+    <h2>Encapsulation</h2>
+    <p>Inner workings of object are hidden. Only essential functionalities exposed to end user.</p>
+    <h2>Polymorphism</h2>
+    <p>Objects can share methods, but can override them with more specific implementations as needed.</p>
+    <h2>Inheritance</h2>
+    <p>Objects can inherit methods and properties from other objects, and additional functionality can be added through additional properties and methods.</p>
+    <h2>Constructor Functions</h2>
+    <p>Another way to create new objects:</p>
+    <img src="construct_func.JPG">
+    <p><b>this</b> used to represent object returned by constructor function.</p>
+    <p>Instance created using new: EX: const redDice = new Dice(); *Note parenthesis not required unless passing an argument.</p>
+    <h2>ES6 Class Declarations</h2>
+    <p>Does same as constructor function, just looks more like a class-based declaration</p>
+    <img src="class.JPG">
+    <p>"new" operator used to create an instance, just like with constructor functions.</p>
+    <h2>Constructor Property</h2>
+    <p>Returns constructor of an object.</p>
+    <h2>Static Methods</h2>
+    <p>static keyword used to create static methods, which are called by the class directly, rather than instances of the class.</p>
+    <h2>Prototype Property</h2>
+    <p>All classes and constructor functions have a prototype property that returns an object. ObjectName.prototype. (property or function) can be used to add methods and properties to an object.</p>
+    <h2>Own Properties and Prototype Properties</h2>
+    <p>An objects own property is a property with a value unique to the object. Prototype property values are the same across all objects of a class.</p>
+    <h2>The Prototype Is Live!</h2>
+    <p>If a new method/property is added to the prototype object, any instance of the class inherits the new properties even if instances have already been created.</p>
+    <p>Object instances can overwrite properties or methids inherited from prototype by assigning a new value to them.</p>
+    <h2>What Should the Prototype Be Used For?</h2>
+    <p>The prototype can be used to add any new properties and methods after the class has been declared. It should be used to define any properties that will remain the same for every instance of the class.</p>
+    <h2>Inheritance Using extends</h2>
+    <p>Use extends keyword to create sub/child classes.</p>
+    <img src="extends.JPG">
+    <h2>Adding Methods to Built-in Objects</h2>
+    <p>It is possible (but usually frowned upon) to add methods to the prototype of JavaScript built in objects, like Number, String, Array, etc. This is called monkey-patching</p>
+    <img src="add_method.JPG">
+    <h2>Creating Objects from Other Objects</h2>
+    <p>New objects can be created from other objects usint the Object() constructor function's method: create.</p>
+    <img src="obj_obj1.JPG"><br>
+    <img src="obj_obj2.JPG">
+
+
+
+
+
+
+
+    <h1>Questions:</h1>
+    <h3>Under what circumstances would one want to use static methods?</h3>
+    
+</body>
+
+</html>
