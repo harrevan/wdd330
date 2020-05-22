@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 05</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="header">
+        <p>Javascript: Novice to Ninja Chapter 10: Testing and Debugging</p>
+    </div> 
+
+    <h1>Exceptions</h1>
+    <p>Error producing a return value that can be used by program to deal with the error.</p>
+    <h2>Stack Trace</h2>
+    <p>Sequence of function calls leading to the point where the error occured.</p>
+
+    <h1>Warnings</h1>
+    <p>Errors in code that do not cause a program crash. May cause program to run incorrectly.</p>
+
+    <h1>Testing and Debugging</h1>
+    <p>Write code that fails loudly in development, and gracefully in production.</p>
+    <h2>Strict Mode</h2>
+    <p>Produces more exceptions and warnings, and prohibits use of some deprecated features.</p>
+    <p>To use, add  'use strict'; to top of javascript file or functionto apply to entire file or only function.</p>
+    <h2>Linting Tools</h2>
+    <p>Used to test quality of code. Highlight sloppy practices, syntax errors, and help enforce conventions and style guides.</p>
+
+    <h1>Feature Detection</h1>
+    <p>Used to determine browser suppoert for a feature (API)</p>
+    <img src="feature_detection.JPG">
+
+    <h1>Debugging in the Browser</h1>
+    <h2>Alert</h2>
+    <p>alert() method can be used to dialogs at certain points in the code. Effectively adds a breakpoint if desired. Not recommended now because of more options today.</p>
+    <h2>Using the Console</h2>
+    <p>Use console object. EX: console.log(), console.trace(), etc.</p>
+    <h2>Debugging Tools</h2>
+    <p>Can be used to set breakpoints.</p>   
+    <p>debugger keyword can be used to create breakpoints in the code.</p>
+    <img src="debugger.JPG">
+
+    <h1>Error Objects</h1>
+    <img src="error.JPG">
+    <h2>7 more error objects for specific errors:</h2>
+    <img src="seven_errors.JPG">
+    <h1>Throwing Exceptions</h1>
+    <p>Use throw statement to throw your own exceptions. Best practice dictates throwing an error object, which is caught in a catch block</p>
+    <h2>Exception Handling</h2>
+    <p>Gracefully handle exceptions by catching errors.</p>
+    <h2>try, catch, and finally</h2>
+    <p>Wrap code that can result in an exception in a try block.</p>
+
+    <h1>Tests</h1>
+    <p>Can be as simple as a function testing that a piece of code runs as it should.</p>
+    <h2>Test Driven Development</h2>
+    <p>Process of writing tests before any code. Then write the code to pass the tests.</p>
+    <h2>Testing Frameworks</h2>
+    <p>Ex: Jest, a TDD framework created by Facebook.</p>
+</body>
+</html>
