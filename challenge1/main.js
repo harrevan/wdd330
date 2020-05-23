@@ -1,4 +1,13 @@
-import ToDo from 'todos.js';
+import ToDo from './todos.js';
+//import Hikes from './todos.js';
 
-const ToDo = new ToDo('Test todo');
-console.log(ToDo);
+const addButton = document.getElementById("add");
+addButton.addEventListener("click", function(){
+    const todo = new ToDo();
+    //console.log(todo);
+    todo.addToList();
+   // console.log(todo.getToDoList()[0]);
+});
+
+
+
