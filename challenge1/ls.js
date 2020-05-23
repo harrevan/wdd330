@@ -3,5 +3,5 @@ export default function saveList(list){
 
     console.log(list[0]);
     localStorage.setItem("hello", "hi");
-    //console.log(JSON.parse(localStorage.getItem(toDoListName)));
+    console.log(JSON.parse(localStorage.getItem(toDoListName)));
 }
