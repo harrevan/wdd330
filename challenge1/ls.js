@@ -14,11 +14,10 @@ export function saveToList(todo){
         console.log(storageArray);
 
     }
-    
-    console.log(JSON.parse(localStorage.getItem(toDoListName)));
 }
 
 export function retrieveList(){
+    console.log(JSON.parse(localStorage.getItem(toDoListName)));
     return JSON.parse(localStorage.getItem(toDoListName));
 }
 
