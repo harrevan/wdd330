@@ -8,7 +8,7 @@ export function saveToList(todo){
         localStorage.setItem(toDoListName, JSON.stringify(storageArray));
     }
     else{
-        var storageArray = JSON.parse(localstorage.getItem(toDoListName));
+        var storageArray = JSON.parse(localStorage.getItem(toDoListName));
         storageArray.push(todo);
         localstorage.setItem(toDoListName, JSON.stringify(storageArray));
 
