@@ -61,4 +61,6 @@ function renderToDo(toDo){
     const text = document.createTextNode("\u00D7");
     span.appendChild(text);
     item.appendChild(span);
+
+    return item;
 }
