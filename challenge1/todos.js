@@ -33,8 +33,10 @@ export default class ToDo {
 
     showToDoList(){
         //this.parentElement.innerHTML = "";
-        console.log(document.getElementById("toDoList"));
-        renderToDoList(document.getElementById("toDoList"), this.getToDoList());
+        if(this.getToDoList() != ""){
+            console.log(document.getElementById("toDoList"));
+            renderToDoList(document.getElementById("toDoList"), this.getToDoList());
+        }
         
     }
 
