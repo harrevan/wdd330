@@ -7,6 +7,9 @@ export default class ToDo {
     constructor(){
         this.completed = false;
         this.Id = Date.now();
+    }
+
+    getContent(){
         this.content = getDOMContent();
     }
 
@@ -15,8 +18,11 @@ export default class ToDo {
     }
 
     addToList(){
-        //toDoList.push(this);
-        saveToList(this);
+        const content = getDOMContent();
+        if(content != ""){
+            this.content = content;
+            saveToList(this);
+        }
     }
 
     getToDoList(){
