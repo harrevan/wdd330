@@ -6,6 +6,7 @@ const addButton = document.getElementById("add");
 addButton.addEventListener("click", function(){
     //console.log(todo);
     todo.addToList();
+    todo.showToDoList();
 });
 
 window.addEventListener('load', () => {
