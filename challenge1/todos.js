@@ -29,6 +29,7 @@ export default class ToDo {
 
     showToDoList(){
         //this.parentElement.innerHTML = "";
+        console.log("To do list:" + this.getToDoList());
         renderToDoList(this.parentElement, this.getToDoList());
         console.log(this.parentElement);
     }
