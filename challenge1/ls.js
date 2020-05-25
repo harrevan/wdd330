@@ -1,7 +1,7 @@
 const toDoListName = "myToDos";
 
 export function saveToList(todo){
-
+    console.log("setting local storage...")
     if(!localStorage.getItem(toDoListName)){
         var storageArray = [];
         storageArray.push(todo);
