@@ -1,5 +1,5 @@
 import { getDOMContent } from './utilities.js'
-import saveList from './ls.js'
+import { saveList } from './ls.js'
 
 const toDoList = [];
 
