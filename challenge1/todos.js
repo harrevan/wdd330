@@ -29,8 +29,7 @@ export default class ToDo {
 
     showToDoList(){
         //this.parentElement.innerHTML = "";
-        renderToDoList(document.getElementById("toDoList"), this.getToDoList());
-        console.log(this.parentElement);
+        renderToDoList(document.getElementById("todoList"), this.getToDoList());
     }
 
 /*     removeToDo(id){
