@@ -16,8 +16,8 @@ export default class ToDo {
 
     addToList(){
         if(this.content != ""){
-            toDoList.push(this);
-            saveList(toDoList);
+            //toDoList.push(this);
+            saveToList(this);
         }
     }
 
