@@ -42,6 +42,7 @@ export default class ToDo {
 }
 
 function renderToDoList(parent, list){
+    parent.innerHTML = "";
     console.log("LIST: ");
     console.log(list);
     list.forEach(toDo => {
