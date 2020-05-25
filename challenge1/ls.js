@@ -3,3 +3,4 @@ export default function saveList(list){
     localStorage.setItem(toDoListName, JSON.stringify(list));
     console.log(JSON.parse(localStorage.getItem(toDoListName)));
 }
+

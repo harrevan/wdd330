@@ -1,4 +1,4 @@
-export default function getDOMContent(){
+export function getDOMContent(){
     const content = document.getElementById('addToDo').value;
     // Empty text input
     document.getElementById('addToDo').value = "";
