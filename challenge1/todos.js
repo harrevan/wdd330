@@ -45,7 +45,7 @@ export default class ToDo {
 function renderToDoList(parent, list){
     console.log("LIST: ");
     console.log(list);
-    list.foreach(toDo => {
+    list.forEach(toDo => {
         parent.appendChild(renderToDo(toDo))
     });
 }
