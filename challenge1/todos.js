@@ -46,12 +46,12 @@ export default class ToDo {
     addCheckBoxEventListener(){
         const toDoArray = Array.from(document.getElementById("toDoList").children);
         toDoArray.forEach(child => {
-            child.addEventListener("change", function(){
+            child.addEventListener("change", e =>{
                 if(this.checked){
-                    todo.completed = true;
+                    e.currentTarget.dataset.completed = true;
                 }
                 else{
-                    todo.completed = false;
+                    e.currentTarget.dataset.completed = false;
                 }
             });
 
