@@ -49,9 +49,11 @@ export default class ToDo {
             child.addEventListener("change", e =>{
                 if(this.checked){
                     e.currentTarget.dataset.completed = true;
+                    console.log(e.currentTarget.dataset);
                 }
                 else{
                     e.currentTarget.dataset.completed = false;
+                    console.log(e.currentTarget.dataset);
                 }
             });
 
