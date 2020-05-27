@@ -32,8 +32,8 @@ export default class ToDo {
         if(this.getToDoList() != null){
             console.log(document.getElementById("toDoList"));
             renderToDoList(document.getElementById("toDoList"), this.getToDoList());
+            this.addCheckBoxEventListener();
         }
-        
     }
 
 /*     removeToDo(id){
@@ -43,6 +43,20 @@ export default class ToDo {
             }
         }); 
     } */
+    addCheckBoxEventListener(){
+        const toDoArray = Array.from(document.getElementById("toDoList").children);
+        toDoArray.forEach(child => {
+            child.addEventListener(change, function(){
+                if(this.checked){
+                    todo.completed = true;
+                }
+                else{
+                    todo.completed = false;
+                }
+            });
+
+        });
+    }
 }
 
 function renderToDoList(parent, list){
@@ -69,3 +83,5 @@ function renderToDo(toDo){
 
     return item;
 }
+
+
