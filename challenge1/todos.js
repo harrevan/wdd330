@@ -13,10 +13,6 @@ export default class ToDo {
         this.content = getDOMContent();
     }
 
-    checkComplete(){
-        this.completed = true;
-    }
-
     addToList(){
         const content = getDOMContent();
         if(content != ""){
