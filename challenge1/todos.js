@@ -61,7 +61,7 @@ export default class ToDo {
             //});
 
        // });
-    }
+    //}
 }
 
 function renderToDoList(parent, list){
