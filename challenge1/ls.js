@@ -22,7 +22,7 @@ export function retrieveList(){
 }
 
 export function updateList(todo){
-    const array = localStorage.getItem(toDoListName);
+    let array = localStorage.getItem(toDoListName);
     array = JSON.parse(array).map(task=> {
         if(task.id === todo.id){
             task = todo;
