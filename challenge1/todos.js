@@ -70,7 +70,7 @@ export default class ToDo {
 function renderToDoList(parent, list){
     parent.innerHTML = "";
     list.forEach(toDo => {
-        parent.appendChild(renderToDo(toDo))
+        renderToDo();
        // addCheckBoxEventListener(toDo);
     });}
 
