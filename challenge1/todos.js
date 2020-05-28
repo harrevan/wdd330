@@ -67,13 +67,12 @@ export default class ToDo {
     //}
 }
 
-//function renderToDoList(parent, list){
-  //  parent.innerHTML = "";
-    //list.forEach(toDo => {
-      //  parent.appendChild(renderToDo(toDo))
-        //addCheckBoxEventListener(toDo);
-    //});
-//}
+function renderToDoList(parent, list){
+    parent.innerHTML = "";
+    list.forEach(toDo => {
+        parent.appendChild(renderToDo(toDo))
+       // addCheckBoxEventListener(toDo);
+    });}
 
 function renderToDo(){
     const item = document.createElement("li");
