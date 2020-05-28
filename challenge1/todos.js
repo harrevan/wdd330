@@ -29,7 +29,7 @@ export default class ToDo {
     }
 
     showToDo(){
-        renderToDo();
+        renderToDo(this);
     }
 
     showToDoList(){
@@ -70,13 +70,13 @@ export default class ToDo {
 function renderToDoList(parent, list){
     parent.innerHTML = "";
     list.forEach(toDo => {
-        renderToDo();
+        renderToDo(toDo);
        // addCheckBoxEventListener(toDo);
     });}
 
-function renderToDo(){
+function renderToDo(toDo){
     const item = document.createElement("li");
-    const text = document.createTextNode(getDOMContent());
+    const text = document.createTextNode(toDo.content + " " + todo.completed);
 
     item.appendChild(text);
     document.getElementById("toDoList").appendChild(item);
