@@ -23,16 +23,13 @@ export function retrieveList(){
 
 export function updateList(todo){
     const array = localStorage.getItem(toDoListName);
-    JSON.parse(array);
-    console.log('array parsed: ' + JSON.parse(array))
-    for(var i = 0; i < array.length; i++){
-        if(array[i].id === todo.id){
-            console.log(array[i]);
-            //array[i].completed = todo.completed;
+    array = JSON.parse(array).map(task=> {
+        if(task.id === todo.id){
+            task = todo;
         }
-    }
-    console.log('new array:');
-    console.log(JSON.parse(array));
+    });
+    console.log('new array: ')
+    console.log(array);
     console.log("retrieve list: " + retrieveList()[0].completed);
     localStorage.setItem(toDoListName, array);
 }
