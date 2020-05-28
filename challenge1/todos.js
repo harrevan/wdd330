@@ -6,7 +6,7 @@ const toDoList = [];
 export default class ToDo {
     constructor(){
         this.completed = false;
-        this.Id = Date.now();
+        this.id = Date.now();
     }
 
     getContent(){
