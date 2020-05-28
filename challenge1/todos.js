@@ -43,24 +43,24 @@ export default class ToDo {
             }
         }); 
     } */
-    addCheckBoxEventListener(){
-        const toDoArray = Array.from(document.getElementById("toDoList").children);
-        toDoArray.forEach(child => {
-            console.log("child " + child.nodeName);
-            console.log("childs child: " + child.childNodes)
-            child.addEventListener("change", e =>{
-                if(child.checked){
-                    e.currentTarget.dataset.completed = true;
-                    console.log("e " + e.nodeName);
+    //addCheckBoxEventListener(id){
+        //const toDoArray = Array.from(document.getElementById("toDoList").children);
+        //toDoArray.forEach(child => {
+            //console.log("child " + child.nodeName);
+            //console.log("childs child: " + child.childNodes)
+      //      document.getElementById.addEventListener("change", e =>{
+        //        if(e.checked){
+          //          e.currentTarget.dataset.completed = true;
+            //        console.log("e " + e.nodeName);
                     
-                }
-                else{
-                    e.currentTarget.dataset.completed = false;
-                    console.log(e.currentTarget.dataset);
-                }
-            });
+              //  }
+               // else{
+                //    e.currentTarget.dataset.completed = false;
+                //    console.log(e.currentTarget.dataset);
+                //}
+            //});
 
-        });
+       // });
     }
 }
 
@@ -86,8 +86,26 @@ function renderToDo(toDo){
     const text = document.createTextNode("\u00D7");
     span.appendChild(text);
     item.appendChild(span);
+    addCheckBoxEventListener(todo);
 
     return item;
 }
 
+function addCheckBoxEventListener(todo){
+    //const toDoArray = Array.from(document.getElementById("toDoList").children);
+    //toDoArray.forEach(child => {
+        //console.log("child " + child.nodeName);
+        //console.log("childs child: " + child.childNodes)
+        const checkbox = document.getElementById(todo.id)
+        checkbox.addEventListener("change", function() {
+            if(checkbox.checked){
+                todo.completed = true;
+                console.log(todo);
+                
+            }
+            else{
+                todo.completed = false;
+            }
+        });
+}
 
