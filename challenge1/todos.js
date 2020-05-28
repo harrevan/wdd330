@@ -28,6 +28,10 @@ export default class ToDo {
         return list;
     }
 
+    showToDo(){
+        renderToDo();
+    }
+
     showToDoList(){
         //this.parentElement.innerHTML = "";
         if(this.getToDoList() != null){
@@ -63,21 +67,25 @@ export default class ToDo {
     //}
 }
 
-function renderToDoList(parent, list){
-    parent.innerHTML = "";
-    list.forEach(toDo => {
-        parent.appendChild(renderToDo(toDo))
-        addCheckBoxEventListener(toDo);
-    });
-}
+//function renderToDoList(parent, list){
+  //  parent.innerHTML = "";
+    //list.forEach(toDo => {
+      //  parent.appendChild(renderToDo(toDo))
+        //addCheckBoxEventListener(toDo);
+    //});
+//}
 
-function renderToDo(toDo){
-    const item = document.createElement("DIV");
+function renderToDo(){
+    const item = document.createElement("li");
+    const text = document.createTextNode(getDOMContent());
+
+    item.appendChild(text);
+    document.getElementById("toDoList").appendChild(item);
     //item.setAttribute("type", "checkbox");
     //item.setAttribute("id", toDo.id);
 
-    item.innerHTML = `<input type="checkbox" id=${toDo.id}>
-                      <label for=${toDo.id}>${toDo.content}</label>`;
+    //item.innerHTML = `<input type="checkbox" id=${toDo.id}>
+      //                <label for=${toDo.id}>${toDo.content}</label>`;
 
     // Display To Do
    // const label = document.createElement("LABEL");
@@ -87,10 +95,10 @@ function renderToDo(toDo){
 
     // Display close button
     const span = document.createElement("SPAN");
-    const text = document.createTextNode("\u00D7");
-    span.appendChild(text);
+    const removeIndicator = document.createTextNode("\u00D7");
+    span.appendChild(removeIndicator);
     item.appendChild(span);
-    return item;
+    //return item;
 }
 
 function addCheckBoxEventListener(todo){
