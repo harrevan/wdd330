@@ -31,7 +31,7 @@ export default class ToDo {
         //this.parentElement.innerHTML = "";
         if(this.getToDoList() != null){
             console.log(document.getElementById("toDoList"));
-            renderToDoList(document.getElementById("toDoList"), getToDoList());
+            renderToDoList(document.getElementById("toDoList"), this.getToDoList());
         }
     }
 
