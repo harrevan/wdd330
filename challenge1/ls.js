@@ -24,6 +24,7 @@ export function retrieveList(){
 export function updateList(todo){
     const array = localStorage.getItem(toDoListName);
     JSON.parse(array);
+    console.log('array parsed: ' + JSON.parse(array))
     for(var i = 0; i < array.length; i++){
         if(array[i].id === todo.id){
             console.log(array[i]);
