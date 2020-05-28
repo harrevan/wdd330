@@ -25,15 +25,15 @@ export function updateList(todo){
     let array = JSON.parse(localStorage.getItem(toDoListName));
     console.log('Array[0]:')
     console.log(array[0]);
-    array.forEach(function(task, index){
+    array = array.map(function(task){
         console.log('task: ');
         console.log(task);
         console.log("index: " + index);
         console.log('array[index]');
         console.log(array[index]);
-        //if(task[index].id === todo.id){
-          //  task[index] = todo;
-        //}
+        if(task.id === todo.id){
+            task = todo;
+        }
     });
 }
 
