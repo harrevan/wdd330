@@ -103,10 +103,8 @@ function addCheckBoxEventListener(todo){
         const checkbox = document.getElementById(todo.id)
         checkbox.addEventListener("change", function() {
             if(checkbox.checked){
-                todo.completed = true;
+                todo.checked = true;
                 updateList(todo);
-                console.log(todo);
-                
             }
             else{
                 todo.completed = false;
