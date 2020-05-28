@@ -82,7 +82,7 @@ function renderToDo(toDo){
     const label = document.createElement("LABEL");
     label.htmlFor = toDo.id;
     label.appendChild(document.createTextNode(toDo.content));
-    item.appendChild(label);
+    item.parentElement.appendChild(label);
 
     // Display close button
     const span = document.createElement("SPAN");
