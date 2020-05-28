@@ -29,7 +29,7 @@ export function updateList(todo){
         }
         console.log(task);
     });
-
+    console.log("retrieve list: " + retrieveList());
     localStorage.setItem(toDoListName, array);
 }
 
