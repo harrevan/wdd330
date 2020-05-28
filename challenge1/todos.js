@@ -78,7 +78,8 @@ function renderToDo(toDo){
     //item.setAttribute("type", "checkbox");
     //item.setAttribute("id", toDo.id);
 
-    item.innerHTML = `<label><input type="checkbox" id=${toDo.id} >${toDo.content}</label>`;
+    item.innerHTML = `<input type="checkbox" id=${toDo.id}>
+                      <label for=${toDo.id}>${toDo.content}</label>`;
 
     // Display To Do
    // const label = document.createElement("LABEL");
