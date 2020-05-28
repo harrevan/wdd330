@@ -110,6 +110,7 @@ function addCheckBoxEventListener(todo){
             }
             else{
                 todo.completed = false;
+                updateList(todo);
             }
         });
 }
