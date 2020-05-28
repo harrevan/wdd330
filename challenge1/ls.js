@@ -26,7 +26,8 @@ export function updateList(todo){
     JSON.parse(array);
     for(var i = 0; i < array.length; i++){
         if(array[i].id === todo.id){
-            array[i].completed = todo.completed;
+            console.log(array[i]);
+            //array[i].completed = todo.completed;
         }
     }
     console.log('new array:');
