@@ -28,6 +28,8 @@ export function updateList(todo){
             task.completed = todo.completed;
         }
     });
+
+    localStorage.setItem(toDoListName, array);
 }
 
 
