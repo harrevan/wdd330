@@ -76,7 +76,7 @@ function renderToDoList(parent, list){
 
 function renderToDo(toDo){
     const item = document.createElement("li");
-    const text = document.createTextNode(toDo.content + " " + todo.completed);
+    const text = document.createTextNode(toDo.content + " " + toDo.completed);
 
     item.appendChild(text);
     document.getElementById("toDoList").appendChild(item);
