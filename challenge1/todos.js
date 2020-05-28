@@ -47,13 +47,13 @@ export default class ToDo {
         const toDoArray = Array.from(document.getElementById("toDoList").children);
         toDoArray.forEach(child => {
             child.addEventListener("change", e =>{
-                if(this.checked){
+                if(e.checked){
                     e.currentTarget.dataset.completed = true;
-                    console.log(child.completed);
+                    console.log(e.currentTarget.dataset);
                 }
                 else{
                     e.currentTarget.dataset.completed = false;
-                    console.log(child.completed);
+                    console.log(e.currentTarget.dataset);
                 }
             });
 
