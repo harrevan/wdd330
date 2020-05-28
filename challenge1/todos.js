@@ -23,14 +23,12 @@ export default class ToDo {
 
     getToDoList(){
         const list = retrieveList();
-        console.log(list);
         return list;
     }
 
     showToDoList(){
         //this.parentElement.innerHTML = "";
         if(this.getToDoList() != null){
-            console.log(document.getElementById("toDoList"));
             renderToDoList(document.getElementById("toDoList"), this.getToDoList());
         }
     }
@@ -65,8 +63,6 @@ export default class ToDo {
 
 function renderToDoList(parent, list){
     parent.innerHTML = "";
-    console.log("LIST: ");
-    console.log(list);
     list.forEach(toDo => {
         parent.appendChild(renderToDo(toDo))
         addCheckBoxEventListener(toDo);

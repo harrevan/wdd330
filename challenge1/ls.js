@@ -26,6 +26,9 @@ export function updateList(todo){
     console.log('Array[0]:')
     console.log(array[0]);
     array.forEach((task, index)=> {
+        console.log('task: ')
+        console.log(task);
+        console.log("index: " + index)
         if(task[index].id === todo.id){
             task[index] = todo;
         }
