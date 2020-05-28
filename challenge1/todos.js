@@ -47,6 +47,7 @@ export default class ToDo {
         const toDoArray = Array.from(document.getElementById("toDoList").children);
         toDoArray.forEach(child => {
             console.log("child " + child.nodeName);
+            console.log("childs child: " + child.childNodes)
             child.addEventListener("change", e =>{
                 if(child.checked){
                     e.currentTarget.dataset.completed = true;
