@@ -32,7 +32,6 @@ export default class ToDo {
         if(this.getToDoList() != null){
             console.log(document.getElementById("toDoList"));
             renderToDoList(document.getElementById("toDoList"), this.getToDoList());
-            this.addCheckBoxEventListener();
         }
     }
 
@@ -80,7 +79,10 @@ function renderToDo(toDo){
     item.setAttribute("id", toDo.id);
 
     // Display To Do
-    item.innerHTML = toDo.content;
+    const label = document.createElement("LABEL");
+    label.htmlFor = toDo.id;
+    label.appendChild(document.createTextNode(toDo.content));
+    item.appendChild(label);
 
     // Display close button
     const span = document.createElement("SPAN");
