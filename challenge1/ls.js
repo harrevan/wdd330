@@ -26,10 +26,11 @@ export function updateList(todo){
     array = JSON.parse(array).map(task=> {
         if(task.id === todo.id){
             task = todo;
+            return task;
         }
     });
     console.log('new array: ')
-    console.log(JSON.parse(array));
+    console.log(array);
     console.log("retrieve list: " + retrieveList()[0].completed);
     localStorage.setItem(toDoListName, array);
 }
