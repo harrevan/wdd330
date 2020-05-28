@@ -23,11 +23,11 @@ export function retrieveList(){
 
 export function updateList(todo){
     const array = localStorage.getItem(toDoListName);
-    JSON.parse(array).forEach(task => {
+    const newArray = JSON.parse(array).map(task=> {
         if(task.id === todo.id){
             task.completed = todo.completed;
         }
-        console.log(task);
+        console.log(newArray);
     });
     console.log("retrieve list: " + retrieveList()[0].completed);
     localStorage.setItem(toDoListName, array);
