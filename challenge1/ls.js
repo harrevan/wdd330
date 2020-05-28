@@ -21,4 +21,13 @@ export function retrieveList(){
     return JSON.parse(localStorage.getItem(toDoListName));
 }
 
+export function updateList(todo){
+    const array = localStorage.getItem(toDoListName)
+    array.getItem(toDoListName).forEach(task => {
+        if(task.id === todo.id){
+            task.completed = todo.completed;
+        }
+    });
+}
+
 

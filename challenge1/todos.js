@@ -1,5 +1,5 @@
 import { getDOMContent } from './utilities.js'
-import { saveToList, retrieveList } from './ls.js'
+import { saveToList, retrieveList, updateList } from './ls.js'
 
 const toDoList = [];
 
@@ -104,6 +104,7 @@ function addCheckBoxEventListener(todo){
         checkbox.addEventListener("change", function() {
             if(checkbox.checked){
                 todo.completed = true;
+                updateList(todo);
                 console.log(todo);
                 
             }
