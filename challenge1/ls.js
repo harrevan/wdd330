@@ -30,7 +30,7 @@ export function updateList(todo){
         console.log(task);
         console.log("index: " + index);
         console.log('task[index]');
-        console.log(task[index].id);
+        console.log(task[index]);
         //if(task[index].id === todo.id){
           //  task[index] = todo;
         //}
