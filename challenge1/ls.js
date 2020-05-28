@@ -27,6 +27,7 @@ export function updateList(todo){
         if(task.id === todo.id){
             task.completed = todo.completed;
         }
+        console.log(task);
     });
 
     localStorage.setItem(toDoListName, array);
