@@ -23,6 +23,8 @@ export default class ToDo {
 
     getToDoList(){
         const list = retrieveList();
+        console.log("list retrieved");
+        console.log(list);
         return list;
     }
 

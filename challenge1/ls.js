@@ -26,11 +26,11 @@ export function updateList(todo){
     console.log('Array[0]:')
     console.log(array[0]);
     array = array.map(function(task){
-        console.log('task: ');
-        console.log(task);
-        console.log("index: " + index);
-        console.log('array[index]');
-        console.log(array[index]);
+        //console.log('task: ');
+        //console.log(task);
+        //console.log("index: " + index);
+        //console.log('array[index]');
+        //console.log(array[index]);
         if(task.id === todo.id){
             task = todo;
         }
