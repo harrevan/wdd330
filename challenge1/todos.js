@@ -74,15 +74,17 @@ function renderToDoList(parent, list){
 }
 
 function renderToDo(toDo){
-    const item = document.createElement("INPUT");
-    item.setAttribute("type", "checkbox");
-    item.setAttribute("id", toDo.id);
+    const item = document.createElement("DIV");
+    //item.setAttribute("type", "checkbox");
+    //item.setAttribute("id", toDo.id);
+
+    item.innerHTML = `<label><input type="checkbox" id=${toDo.id} >${toDo.content}</label>`;
 
     // Display To Do
-    const label = document.createElement("LABEL");
-    label.htmlFor = toDo.id;
-    label.appendChild(document.createTextNode(toDo.content));
-    item.parentElement.appendChild(label);
+   // const label = document.createElement("LABEL");
+    //label.htmlFor = toDo.id;
+    //label.appendChild(document.createTextNode(toDo.content));
+    //item.parentElement.appendChild(label);
 
     // Display close button
     const span = document.createElement("SPAN");
