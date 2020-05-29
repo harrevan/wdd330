@@ -53,4 +53,12 @@ export function updateChecked(id){
  //   });
 }
 
+export function updateRemove(id){
+    let array = JSON.parse(localStorage.getItem(toDoListName));
+    
+    const index = array.indexOf(this.id);
+    array.splice()
+
+}
+
 
