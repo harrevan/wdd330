@@ -60,7 +60,7 @@ export default class ToDo {
     addRemoveListener(){
         const toDoArray = document.querySelector('span');
         toDoArray.addEventListener('click', function(e){
-            console.log('span: e.dataset: ' + e.currentTarget.dataset);
+            console.log('span: e.dataset: ' + e.currentTarget.dataset.id);
             //updateRemove(e.target.id);
             //location.reload();
         });
