@@ -60,9 +60,9 @@ export default class ToDo {
     addRemoveListener(){
         const toDoArray = document.querySelector('span');
         toDoArray.addEventListener('click', function(e){
-            console.log('span: e.dataset: ' + e.currentTarget.dataset.id);
-            //updateRemove(e.target.id);
-            //location.reload();
+            //console.log('span: e.dataset: ' + e.currentTarget.dataset.id);
+            updateRemove(e.target.id);
+            location.reload();
         });
     }
 
@@ -125,7 +125,7 @@ function renderToDo(toDo){
     const removeIndicator = document.createTextNode("\u00D7");
     span.appendChild(removeIndicator);
     span.className = "close";
-    span.id = "remove";
+    span.id = toDo.id;
     item.appendChild(span);
     //return item;
 }

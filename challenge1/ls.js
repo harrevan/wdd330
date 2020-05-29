@@ -26,8 +26,8 @@ export function updateChecked(id){
     //console.log('Array[0]:')
     //console.log(array[0]);
     for(let i = 0; i < array.length; i++){
-        console.log('passed id: ' + id);
-        console.log(array[0].id);
+        //console.log('passed id: ' + id);
+        //console.log(array[0].id);
         if(parseInt(array[i].id, 10) === parseInt(id, 10)){
             if(array[i].completed === false){
                 array[i].completed = true;
@@ -56,9 +56,14 @@ export function updateChecked(id){
 export function updateRemove(id){
     let array = JSON.parse(localStorage.getItem(toDoListName));
     
-    const index = array.indexOf(this.id);
-    array.splice()
-
+    for(let i = 0; i < array.length; i++){
+        console.log('passed id: ' + id);
+        console.log(array[0].id);
+        if(parseInt(array[i].id, 10) === parseInt(id, 10)){
+            array.splice(i,1);
+        }
+    }
+    localStorage.setItem(toDoListName, JSON.stringify(array));
 }
 
 
