@@ -101,7 +101,7 @@ export default class ToDo {
                 if(e.target.id === "active"){
                     showFilteredList(false);
                 }
-                else if(e.target.id === "complete"){
+                else if(e.target.id === "completed"){
                     showFilteredList(true);
                 }
                 else{
