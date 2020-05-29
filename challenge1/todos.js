@@ -50,6 +50,7 @@ export default class ToDo {
             if(e.target.tagName === 'LI'){
                 console.log('e.id: ' + e.target.id);
                 updateChecked(e.target.id);
+                this.showToDoList();
                 //e.currentTarget.dataset.checkOff();
                 //console.log(e.currentTarget.dataset)
             }
