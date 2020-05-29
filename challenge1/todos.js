@@ -48,8 +48,9 @@ export default class ToDo {
         const toDoArray = document.querySelector('ul');
         toDoArray.addEventListener('click', function(e){
             if(e.target.tagName === 'LI'){
+                console.log(e.currentTarget.dataset)
                 e.currentTarget.dataset.checkOff();
-                console.log(e.currentTarget.dataset);
+                //console.log(e.currentTarget.dataset)
             }
         });
         console.log(toDoArray);
@@ -92,6 +93,7 @@ function renderToDoList(parent, list){
 
 function renderToDo(toDo){
     const item = document.createElement("li");
+    item.id = toDo.id;
     const text = document.createTextNode(toDo.content + " " + toDo.completed);
 
     item.appendChild(text);
