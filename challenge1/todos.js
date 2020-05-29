@@ -39,6 +39,7 @@ export default class ToDo {
         if(this.getToDoList() != null){
             renderToDoList(document.getElementById("toDoList"), this.getToDoList());
             this.addCheckedListener();
+            this.addRemoveListener();
         }
     }
 
