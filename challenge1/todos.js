@@ -1,5 +1,5 @@
 import { getDOMContent } from './utilities.js'
-import { saveToList, retrieveList, updateList } from './ls.js'
+import { saveToList, retrieveList, updateChecked } from './ls.js'
 
 const toDoList = [];
 
@@ -49,7 +49,7 @@ export default class ToDo {
         toDoArray.addEventListener('click', function(e){
             if(e.target.tagName === 'LI'){
                 console.log('e.id: ' + e.target.id);
-                updateList(e.target.id);
+                updateChecked(e.target.id);
                 //e.currentTarget.dataset.checkOff();
                 //console.log(e.currentTarget.dataset)
             }

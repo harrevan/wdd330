@@ -21,7 +21,7 @@ export function retrieveList(){
     return JSON.parse(localStorage.getItem(toDoListName));
 }
 
-export function updateList(id){
+export function updateChecked(id){
     let array = JSON.parse(localStorage.getItem(toDoListName));
     //console.log('Array[0]:')
     //console.log(array[0]);
