@@ -13,6 +13,10 @@ export default class ToDo {
         this.content = getDOMContent();
     }
 
+    checkOff(){
+        this.completed = true;
+    }
+
     addToList(){
         const content = getDOMContent();
         if(content != ""){
@@ -36,7 +40,19 @@ export default class ToDo {
         //this.parentElement.innerHTML = "";
         if(this.getToDoList() != null){
             renderToDoList(document.getElementById("toDoList"), this.getToDoList());
+            this.addCheckedListener();
         }
+    }
+
+    addCheckedListener(){
+        const toDoArray = document.querySelector('ul');
+        toDoArray.addEventListener('click', function(e){
+            if(e.target.tagName === 'LI'){
+                e.currentTarget.dataset.checkOff();
+                console.log(e.currentTarget.dataset);
+            }
+        });
+        console.log(toDoArray);
     }
 
 /*     removeToDo(id){
