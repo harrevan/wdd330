@@ -1,8 +1,6 @@
 import { getDOMContent } from './utilities.js'
 import { saveToList, retrieveList, updateChecked } from './ls.js'
 
-const toDoList = [];
-
 export default class ToDo {
     constructor(){
         this.completed = false;
@@ -50,7 +48,7 @@ export default class ToDo {
             if(e.target.tagName === 'LI'){
                 console.log('e.id: ' + e.target.id);
                 updateChecked(e.target.id);
-                showToDoList();
+                location.reload();
                 //e.currentTarget.dataset.checkOff();
                 //console.log(e.currentTarget.dataset)
             }
