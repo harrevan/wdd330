@@ -29,8 +29,13 @@ export function updateList(id){
         console.log('passed id: ' + id);
         console.log(array[0].id);
         if(parseInt(array[i].id, 10) === parseInt(id, 10)){
+            if(array[i].completed === false){
+                array[i].completed = true;
+            }
+            else{
+                array[i].completed = false;
+            }
             
-            array[i].completed = true;
             console.log(array[i]);
         }
     }
