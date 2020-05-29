@@ -30,7 +30,7 @@ export function retrieveFilteredList(status){
     });
 
     console.log(filteredList);
-
+    return filteredList;
 }
 
 export function updateChecked(id){
