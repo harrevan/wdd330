@@ -21,6 +21,18 @@ export function retrieveList(){
     return JSON.parse(localStorage.getItem(toDoListName));
 }
 
+export function retrieveFilteredList(status){
+    const list = JSON.parse(localStorage.getItem(toDoListName));
+    const filteredList = list.map(task=> {
+        if(task.completed === status){
+            return task;
+        }
+    });
+
+    console.log(filteredList);
+
+}
+
 export function updateChecked(id){
     let array = JSON.parse(localStorage.getItem(toDoListName));
     //console.log('Array[0]:')

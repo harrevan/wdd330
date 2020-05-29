@@ -1,5 +1,5 @@
 import { getDOMContent, resetDOMContent } from './utilities.js'
-import { saveToList, retrieveList, updateChecked, updateRemove } from './ls.js'
+import { saveToList, retrieveList, updateChecked, updateRemove, retrieveFilteredList } from './ls.js'
 
 export default class ToDo {
     constructor(){
@@ -31,6 +31,11 @@ export default class ToDo {
         return list;
     }
 
+    getFilteredList(status){
+        const list = retrieveFilteredList(status);
+        return list;
+    }
+
     showToDo(){
         renderToDo(this);
     }
@@ -39,6 +44,14 @@ export default class ToDo {
         //this.parentElement.innerHTML = "";
         if(this.getToDoList() != null){
             renderToDoList(document.getElementById("toDoList"), this.getToDoList());
+            this.addCheckedListener();
+            this.addRemoveListener();
+        }
+    }
+
+    showFilteredList(status){
+        if(this.getToDoList() != null){
+            renderToDoList(document.getElementById("toDoList"), this.getFilteredList(status));
             this.addCheckedListener();
             this.addRemoveListener();
         }
@@ -63,12 +76,12 @@ export default class ToDo {
         console.log(toDoArray);
         for(let i = 0; i < toDoArray.length; i++){
             toDoArray[i].addEventListener('click', function(e){
-                console.log('e: ' + e.target.id);
+               // console.log('e: ' + e.target.id);
                 updateRemove(e.target.id);
                 location.reload();
             });
 
-        }
+        }  
         //console.log("span size:" + toDoArray.length)
         //toDoArray.forEach(todo => {
            //todo.addEventListener("click", function(e){
@@ -79,6 +92,24 @@ export default class ToDo {
 
         //});
     }
+
+    addFilterEventListener(){
+        const filters = document.getElementsByClassName("filters")
+        for(let i = 0; i < filters.length; i++){
+            filters[i].addEventListener('click', function(e){
+                console.log('e: ' + e.target.id);
+                if(e.target.id === "active"){
+                    showFilteredList(false);
+                }
+                else if(e.target.id === "complete"){
+                    showFilteredList(true);
+                }
+                else{
+                    showToDoList();
+                }
+            });
+        }  
+    }    
 
 /*     removeToDo(id){
         toDoList.forEach(todo => {
@@ -107,6 +138,7 @@ export default class ToDo {
        // });
     //}
 }
+
 
 function renderToDoList(parent, list){
     parent.innerHTML = "";
