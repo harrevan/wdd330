@@ -60,15 +60,22 @@ export default class ToDo {
     addRemoveListener(){
         const toDoArray = document.getElementsByClassName("close");
         console.log(toDoArray);
+        toDoArray.addEventListener
+        for(let i = 0; i < toDoArray.length; i++){
+            toDoArray[i].addEventListener('click', function(e){
+                console.log('e: ' + e.target.id);
+            });
+
+        }
         //console.log("span size:" + toDoArray.length)
-        toDoArray.forEach(todo => {
-            todo.addEventListener("click", function(e){
-                console.log('span: e.dataset: ' + e.currentTarget.dataset.id);
+        //toDoArray.forEach(todo => {
+           //todo.addEventListener("click", function(e){
+             //   console.log('span: e.dataset: ' + e.currentTarget.dataset.id);
           //      this.updateRemove(e.target.id);
            //     location.reload();
-             });
+             //});
 
-        });
+        //});
     }
 
 /*     removeToDo(id){
