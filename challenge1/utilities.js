@@ -3,3 +3,6 @@ export function getDOMContent(){
     return content;
 }
 
+export function resetDOMContent(){
+    document.getElementById('addToDo').value = "";
+}

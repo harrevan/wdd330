@@ -1,4 +1,4 @@
-import { getDOMContent } from './utilities.js'
+import { getDOMContent, resetDOMContent } from './utilities.js'
 import { saveToList, retrieveList, updateChecked, updateRemove } from './ls.js'
 
 export default class ToDo {
@@ -20,6 +20,7 @@ export default class ToDo {
         if(content != ""){
             this.content = content;
             saveToList(this);
+            resetDOMContent();
         }
     }
 
@@ -49,7 +50,7 @@ export default class ToDo {
             if(e.target.tagName === 'LI'){
                 //console.log('e.id: ' + e.target.id);
                 updateChecked(e.target.id);
-                location.reload();
+                //location.reload();
                 //e.currentTarget.dataset.checkOff();
                 //console.log(e.currentTarget.dataset)
             }
