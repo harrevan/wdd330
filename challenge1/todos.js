@@ -58,16 +58,17 @@ export default class ToDo {
     }
 
     addRemoveListener(){
-        const toDoArray = document.querySelector("SPAN");
-        console.log("span size:" + toDoArray.length)
-        toDoArray.forEach(todo => {
-            todo.addEventListener("click", function(e){
+        const toDoArray = document.getElementsByClassName("close");
+        console.log(toDoArray);
+        //console.log("span size:" + toDoArray.length)
+        //toDoArray.forEach(todo => {
+          //  todo.addEventListener("click", function(e){
                 //console.log('span: e.dataset: ' + e.currentTarget.dataset.id);
-                this.updateRemove(e.target.id);
-                location.reload();
-            });
+          //      this.updateRemove(e.target.id);
+           //     location.reload();
+           // });
 
-        });
+        //});
     }
 
 /*     removeToDo(id){
