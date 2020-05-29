@@ -28,7 +28,7 @@ export function updateList(id){
     for(let i = 0; i < array.length; i++){
         console.log('passed id: ' + id);
         console.log(array[0].id);
-        if(array[i].id === id){
+        if(parseInt(array[i].id, 10) === parseInt(id, 10)){
             
             array[i].completed = true;
             console.log(array[i]);
