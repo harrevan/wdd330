@@ -60,10 +60,10 @@ export default class ToDo {
     addRemoveListener(){
         const toDoArray = document.getElementsByClassName("close");
         console.log(toDoArray);
-        toDoArray.addEventListener
         for(let i = 0; i < toDoArray.length; i++){
             toDoArray[i].addEventListener('click', function(e){
                 console.log('e: ' + e.target.id);
+                updateRemove(e.target.id);
             });
 
         }
