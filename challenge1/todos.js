@@ -114,6 +114,7 @@ function renderToDo(toDo){
     const span = document.createElement("SPAN");
     const removeIndicator = document.createTextNode("\u00D7");
     span.appendChild(removeIndicator);
+    span.className = "close";
     item.appendChild(span);
     //return item;
 }
