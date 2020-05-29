@@ -21,20 +21,28 @@ export function retrieveList(){
     return JSON.parse(localStorage.getItem(toDoListName));
 }
 
-export function updateList(todo){
+export function updateList(id){
     let array = JSON.parse(localStorage.getItem(toDoListName));
-    console.log('Array[0]:')
-    console.log(array[0]);
-    array = array.map(function(task){
+    //console.log('Array[0]:')
+    //console.log(array[0]);
+    for(let i = 0; i < array.length; i++){
+        if(array[i].id === id){
+            array[i].completed = true;
+            console.log(array[i]);
+        }
+    }
+
+    localStorage.setItem(toDoListName, JSON.stringify(array));
+    //array = array.map(function(task){
         //console.log('task: ');
         //console.log(task);
         //console.log("index: " + index);
         //console.log('array[index]');
         //console.log(array[index]);
-        if(task.id === todo.id){
-            task = todo;
-        }
-    });
+      //  if(task.id === todo.id){
+          //  task = todo;
+        //}
+ //   });
 }
 
 

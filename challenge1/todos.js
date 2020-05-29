@@ -49,7 +49,8 @@ export default class ToDo {
         toDoArray.addEventListener('click', function(e){
             if(e.target.tagName === 'LI'){
                 console.log('e.id: ' + e.target.id);
-                e.currentTarget.dataset.checkOff();
+                updateList(e.target.id);
+                //e.currentTarget.dataset.checkOff();
                 //console.log(e.currentTarget.dataset)
             }
         });
