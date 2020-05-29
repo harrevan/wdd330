@@ -26,7 +26,10 @@ export function updateList(id){
     //console.log('Array[0]:')
     //console.log(array[0]);
     for(let i = 0; i < array.length; i++){
+        console.log('passed id: ' + id);
+        console.log(array[0].id);
         if(array[i].id === id){
+            
             array[i].completed = true;
             console.log(array[i]);
         }
