@@ -94,7 +94,7 @@ export default class ToDo {
     }
 
     addFilterEventListener(){
-        const filters = document.getElementsByClassName("filters")
+        const filters = document.getElementsByClassName("filter")
         for(let i = 0; i < filters.length; i++){
             filters[i].addEventListener('click', function(e){
                 console.log('e: ' + e.target.id);
