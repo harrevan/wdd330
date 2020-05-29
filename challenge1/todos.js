@@ -41,7 +41,6 @@ export default class ToDo {
             renderToDoList(document.getElementById("toDoList"), this.getToDoList());
             this.addCheckedListener();
             this.addRemoveListener();
-            location.reload();
         }
     }
 
@@ -51,7 +50,7 @@ export default class ToDo {
             if(e.target.tagName === 'LI'){
                 //console.log('e.id: ' + e.target.id);
                 updateChecked(e.target.id);
-                //location.reload();
+                location.reload();
                 //e.currentTarget.dataset.checkOff();
                 //console.log(e.currentTarget.dataset)
             }
@@ -66,6 +65,7 @@ export default class ToDo {
             toDoArray[i].addEventListener('click', function(e){
                 console.log('e: ' + e.target.id);
                 updateRemove(e.target.id);
+                location.reload();
             });
 
         }
