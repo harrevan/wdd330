@@ -1,5 +1,5 @@
 import { getDOMContent } from './utilities.js'
-import { saveToList, retrieveList, updateChecked } from './ls.js'
+import { saveToList, retrieveList, updateChecked, updateRemove } from './ls.js'
 
 export default class ToDo {
     constructor(){
@@ -46,7 +46,7 @@ export default class ToDo {
         const toDoArray = document.querySelector('ul');
         toDoArray.addEventListener('click', function(e){
             if(e.target.tagName === 'LI'){
-                console.log('e.id: ' + e.target.id);
+                //console.log('e.id: ' + e.target.id);
                 updateChecked(e.target.id);
                 location.reload();
                 //e.currentTarget.dataset.checkOff();
@@ -54,6 +54,15 @@ export default class ToDo {
             }
         });
         console.log(toDoArray);
+    }
+
+    addRemoveListener(){
+        const toDoArray = document.querySelector('span');
+        toDoArray.addEventListener('click', function(e){
+            console.log('span: e.dataset: ' + e.currentTarget.dataset);
+            //updateRemove(e.target.id);
+            //location.reload();
+        });
     }
 
 /*     removeToDo(id){
@@ -115,6 +124,7 @@ function renderToDo(toDo){
     const removeIndicator = document.createTextNode("\u00D7");
     span.appendChild(removeIndicator);
     span.className = "close";
+    span.id = "remove";
     item.appendChild(span);
     //return item;
 }
