@@ -99,13 +99,13 @@ export default class ToDo {
             filters[i].addEventListener('click', function(e){
                 console.log('e: ' + e.target.id);
                 if(e.target.id === "active"){
-                    showFilteredList(false);
+                    this.showFilteredList(false);
                 }
                 else if(e.target.id === "completed"){
-                    showFilteredList(true);
+                    this.showFilteredList(true);
                 }
                 else{
-                    showToDoList();
+                    this.showToDoList();
                 }
             });
         }  
