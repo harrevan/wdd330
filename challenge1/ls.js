@@ -19,8 +19,8 @@ export function saveToList(todo){
 export function retrieveList(filter){
     //console.log(JSON.parse(localStorage.getItem(toDoListName)));
     //return JSON.parse(localStorage.getItem(toDoListName));
-
-    const list = JSON.parse(localStorage.getItem(toDoListName));
+    console.log('filter: ' + filter);
+    let list = JSON.parse(localStorage.getItem(toDoListName));
     if(filter && filter != "all"){
         list = list.map(task=> {
             if(task.completed === filter){
