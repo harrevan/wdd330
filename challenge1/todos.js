@@ -1,5 +1,5 @@
 import { getDOMContent, resetDOMContent } from './utilities.js'
-import { saveToList, retrieveList, updateChecked, updateRemove, filterList, retrieveFilteredList } from './ls.js'
+import { saveToList, retrieveList, updateChecked, updateRemove, retrieveFilteredList } from './ls.js'
 
 export default class ToDo {
     constructor(){
