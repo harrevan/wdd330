@@ -40,10 +40,10 @@ export default class ToDo {
         renderToDo(this);
     }
 
-    showToDoList(){
+    showToDoList(filter){
         //this.parentElement.innerHTML = "";
         if(this.getToDoList(applyFilter()) != null){
-            renderToDoList(document.getElementById("toDoList"), this.getToDoList(applyFilter()));
+            renderToDoList(document.getElementById("toDoList"), this.getToDoList(filter));
             this.addCheckedListener();
             this.addRemoveListener();
         }
@@ -141,7 +141,7 @@ export default class ToDo {
     //}
 }
 
-function applyFilter(filter){
+function applyFilter(toDo){
     return filter;
 }
 

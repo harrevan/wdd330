@@ -12,8 +12,9 @@ addButton.addEventListener("click", function(){
 
 window.addEventListener('load', () => {
     const todo = new ToDo();
-    todo.showToDoList();
     todo.addFilterEventListener();
+    todo.showToDoList();
+    
   });
 
 
