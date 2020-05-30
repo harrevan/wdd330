@@ -23,7 +23,7 @@ export function retrieveList(filter){
     const list = JSON.parse(localStorage.getItem(toDoListName));
     if(filter && filter != "all"){
         list = list.map(task=> {
-            if(task.completed === status){
+            if(task.completed === filter){
                return task;
             }
         });
