@@ -101,9 +101,6 @@ export default class ToDo {
             filters[i].addEventListener('click', function(e){
                 console.log('e: ' + e.target.id);
                 if(e.target.id === "active"){
-                    //filterList(false);
-                    //this.showFilteredList(false);
-                    //applyFilter(false);
                     toDo.showToDoList(false);
                 }
                 else if(e.target.id === "completed"){
