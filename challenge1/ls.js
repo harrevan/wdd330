@@ -19,7 +19,7 @@ export function saveToList(todo){
 export function retrieveList(filter){
     //console.log(JSON.parse(localStorage.getItem(toDoListName)));
     //return JSON.parse(localStorage.getItem(toDoListName));
-
+    if(localStorage.getItem(toDoListName)){
     const list = JSON.parse(localStorage.getItem(toDoListName));
     if(filter != "all"){
         const list = list.map(task=> {
@@ -31,6 +31,7 @@ export function retrieveList(filter){
     }
 
     return list;
+}
 }
 
 export function retrieveFilteredList(status){
