@@ -21,17 +21,15 @@ export function saveToList(todo){
 export function retrieveList(filter){
     console.log('filter: ' + filter);
     let list = JSON.parse(localStorage.getItem(toDoListName));
-    if(filter != null && filter != "all"){
-        list = list.filter(task=> {
-            console.log("task.completed: ");
-            console.log(task.completed);
-            return task.completed === filter;
-        });
-        
+    if(list != null){
+        if(filter != null && filter != "all"){
+            list = list.filter(task=> {
+                console.log("task.completed: ");
+                console.log(task.completed);
+                return task.completed === filter;
+            }); 
+        }
     }
-    console.log('filtered list: ');
-        console.log(list);
-
     return list;
 }
 
@@ -46,11 +44,8 @@ export function updateChecked(id){
             else{
                 array[i].completed = false;
             }
-            
-            console.log(array[i]);
         }
     }
-
     localStorage.setItem(toDoListName, JSON.stringify(array));
 }
 
