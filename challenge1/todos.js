@@ -42,7 +42,7 @@ export default class ToDo {
 
     showToDoList(){
         //this.parentElement.innerHTML = "";
-        if(this.getToDoList() != null){
+        if(this.getToDoList(applyFilter()) != null){
             renderToDoList(document.getElementById("toDoList"), this.getToDoList(applyFilter()));
             this.addCheckedListener();
             this.addRemoveListener();
