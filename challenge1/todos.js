@@ -103,7 +103,7 @@ export default class ToDo {
                     //filterList(false);
                     //this.showFilteredList(false);
                     //applyFilter(false);
-                    this.showToDoList(false);
+                    toDo.showToDoList(false);
                 }
                 else if(e.target.id === "completed"){
                     //filterList(true);
