@@ -16,19 +16,19 @@ export function saveToList(todo){
     }
 }
 
-export function retrieveList(){
+export function retrieveList(filter){
     //console.log(JSON.parse(localStorage.getItem(toDoListName)));
     //return JSON.parse(localStorage.getItem(toDoListName));
 
     const list = JSON.parse(localStorage.getItem(toDoListName));
-   // if(status != "all"){
-     //   const list = list.map(task=> {
-       //     if(task.completed === status){
-         //       return task;
-           // }
-       // });
-        //console.log(filteredList);
-    //}
+    if(filter != "all"){
+        const list = list.map(task=> {
+            if(task.completed === status){
+               return task;
+            }
+        });
+        console.log(filteredList);
+    }
 
     return list;
 }

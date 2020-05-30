@@ -24,8 +24,8 @@ export default class ToDo {
         }
     }
 
-    getToDoList(){
-        const list = retrieveList();
+    getToDoList(filter){
+        const list = retrieveList(filter);
         console.log("list retrieved");
         console.log(list);
         return list;
@@ -43,7 +43,7 @@ export default class ToDo {
     showToDoList(){
         //this.parentElement.innerHTML = "";
         if(this.getToDoList() != null){
-            renderToDoList(document.getElementById("toDoList"), this.getToDoList());
+            renderToDoList(document.getElementById("toDoList"), this.getToDoList(applyFilter()));
             this.addCheckedListener();
             this.addRemoveListener();
         }
@@ -101,7 +101,7 @@ export default class ToDo {
                 if(e.target.id === "active"){
                     //filterList(false);
                     //this.showFilteredList(false);
-                    this.getToDoList();
+                    applyFilter(false);
                 }
                 else if(e.target.id === "completed"){
                     //filterList(true);
@@ -141,6 +141,9 @@ export default class ToDo {
     //}
 }
 
+function applyFilter(filter){
+    return filter;
+}
 
 function renderToDoList(parent, list){
     parent.innerHTML = "";
