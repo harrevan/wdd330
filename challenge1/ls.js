@@ -22,10 +22,10 @@ export function retrieveList(filter){
     console.log('filter: ' + filter);
     let list = JSON.parse(localStorage.getItem(toDoListName));
     if(filter && filter != "all"){
-        list = list.map(task=> {
-            if(task.completed === filter){
-               return task;
-            }
+        list = list.filter(task=> {
+            console.log("task.completed: ");
+            console.log(task.completed);
+            return task.completed === filter;
         });
         
     }
