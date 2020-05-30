@@ -40,6 +40,8 @@ function renderToDo(toDo){
 
 // Sum the number of todos that are not completed
 export function countRemainingTodos(domLocation, list){
-    const count = list.length;
-    domLocation.innerText = "Tasks left: " + count;
+    if(list != null){
+        const count = list.length;
+        domLocation.innerText = "Tasks left: " + count;
+    }
 }
