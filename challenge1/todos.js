@@ -190,7 +190,7 @@ function renderToDo(toDo){
 
 function countRemainingTodos(domLocation, list){
     const count = list.length;
-    domLocation.innerText = count + " tasks left";
+    domLocation.innerText = "Tasks left: " + count;
 }
 
 function addCheckBoxEventListener(todo){
