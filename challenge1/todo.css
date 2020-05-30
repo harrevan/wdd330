@@ -21,7 +21,6 @@ ul {
 ul li {
   cursor: pointer;
   position: relative;
-  left: 10px;
   padding: 12px 8px 12px 40px;
   background: #eee;
   font-size: 14px;
@@ -30,9 +29,10 @@ ul li {
 
 .close {
   position: absolute;
-  right: 0;
+  right: 10px;
   top: 0;
   padding: 12px 16px 12px 16px;
+  font-size: 20px;
 }
 
 .close:hover {
