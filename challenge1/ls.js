@@ -21,7 +21,7 @@ export function retrieveList(filter){
     //return JSON.parse(localStorage.getItem(toDoListName));
     console.log('filter: ' + filter);
     let list = JSON.parse(localStorage.getItem(toDoListName));
-    if(filter && filter != "all"){
+    if(filter != "all"){
         list = list.filter(task=> {
             console.log("task.completed: ");
             console.log(task.completed);
