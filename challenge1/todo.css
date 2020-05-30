@@ -52,10 +52,8 @@ ul li {
 
 }
 
-#filterActions {
-  position: relative;
-  left: 40px;
-  right: 10px;
+#filters{
+  text-align:center;
   background: #eee;
 
 }
