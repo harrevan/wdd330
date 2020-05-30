@@ -157,7 +157,11 @@ function renderToDoList(parent, list){
 function renderToDo(toDo){
     const item = document.createElement("li");
     item.id = toDo.id;
-    const text = document.createTextNode(toDo.content + " " + toDo.completed);
+    if(toDo.complete){
+        item.className = "complete";
+    }
+    
+    const text = document.createTextNode(toDo.content);
 
     item.appendChild(text);
     document.getElementById("toDoList").appendChild(item);
