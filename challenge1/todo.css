@@ -21,6 +21,7 @@ ul {
 ul li {
   cursor: pointer;
   position: relative;
+  left: 10px;
   padding: 12px 8px 12px 40px;
   background: #eee;
   font-size: 14px;
@@ -52,6 +53,7 @@ ul li {
 
 #filters {
   position: relative;
-  left: 60px;
+  left: 40px;
   background: #eee;
+  right: 10px;
 }
