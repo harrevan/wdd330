@@ -100,7 +100,8 @@ export default class ToDo {
                 console.log('e: ' + e.target.id);
                 if(e.target.id === "active"){
                     //filterList(false);
-                    this.showFilteredList(false);
+                    //this.showFilteredList(false);
+                    this.getToDoList();
                 }
                 else if(e.target.id === "completed"){
                     //filterList(true);
