@@ -55,11 +55,16 @@ ul li {
 #filters{
   text-align:center;
   background: #eee;
-  padding: 12px 8px 12px 16px;
 }
 
 button {
   padding-top: 12px;
   padding-bottom: 12px;
   font-size: 14px;
+}
+
+#filterActions{
+  display: inline-block;
+  margin-right: 20px;
+
 }
