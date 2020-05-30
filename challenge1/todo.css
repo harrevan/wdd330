@@ -49,7 +49,7 @@ ul li {
 
 }
 
-span {
+#filters {
   position: relative;
   left: 60px;
 }
