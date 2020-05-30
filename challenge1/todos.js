@@ -157,7 +157,7 @@ function renderToDoList(parent, list){
 function renderToDo(toDo){
     const item = document.createElement("li");
     item.id = toDo.id;
-    if(toDo.complete){
+    if(toDo.completed){
         item.className = "complete";
     }
     
