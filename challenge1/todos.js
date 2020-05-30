@@ -47,7 +47,7 @@ export default class ToDo {
             this.addCheckedListener();
             this.addRemoveListener();
         }
-        countRemainingTodos(this.getToDoList(document.getElementById("numTasksLeft"), this.getToDoList(false)));
+        countRemainingTodos(document.getElementById("numTasksLeft"), this.getToDoList(false));
     }
 
     showFilteredList(status){
