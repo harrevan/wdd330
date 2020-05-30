@@ -64,7 +64,6 @@ button {
 }
 
 #filterActions{
-  display: inline-block;
-  margin-right: 20px;
+  padding-right: 20px;
 
 }
