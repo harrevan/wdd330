@@ -57,10 +57,11 @@ ul li {
   background: #eee;
 }
 
-button {
+.filter {
   padding-top: 12px;
   padding-bottom: 12px;
   font-size: 14px;
+  margin-left: 15px;
 }
 
 #filterActions{
