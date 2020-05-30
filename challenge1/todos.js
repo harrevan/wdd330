@@ -47,6 +47,7 @@ export default class ToDo {
             this.addCheckedListener();
             this.addRemoveListener();
         }
+        countRemainingTodos(this.getToDoList(document.getElementById("numTasksLeft"), this.getToDoList(false)));
     }
 
     showFilteredList(status){
@@ -185,6 +186,11 @@ function renderToDo(toDo){
     span.id = toDo.id;
     item.appendChild(span);
     //return item;
+}
+
+function countRemainingTodos(domLocation, list){
+    const count = list.length;
+    domLocation.innerText = count + " tasks left";
 }
 
 function addCheckBoxEventListener(todo){
