@@ -6,14 +6,14 @@ addButton.addEventListener("click", function(){
     //console.log(todo);
     const todo = new ToDo();
     todo.addToList();
-    todo.showToDoList();
+    todo.addFilterEventListener();
 });
 
 
 window.addEventListener('load', () => {
     const todo = new ToDo();
     todo.addFilterEventListener();
-    todo.showToDoList();
+    //todo.showToDoList();
     
   });
 
