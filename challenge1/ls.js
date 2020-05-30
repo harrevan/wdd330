@@ -27,9 +27,10 @@ export function retrieveList(filter){
                return task;
             }
         });
-        console.log('filtered list: ');
-        console.log(list);
+        
     }
+    console.log('filtered list: ');
+        console.log(list);
 
     return list;
 }
