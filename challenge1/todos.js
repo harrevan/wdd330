@@ -106,10 +106,10 @@ export default class ToDo {
                     toDo.showToDoList(false);
                 }
                 else if(e.target.id === "completed"){
-                    //filterList(true);
+                    toDo.showToDoList(true);
                 }
                 else{
-                   // filterList("all");
+                   toDo.showToDoList("all");
                 }
             });
         }  
