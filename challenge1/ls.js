@@ -1,5 +1,6 @@
 const toDoListName = "myToDos";
 
+// Save todos in local storage in JSON format
 export function saveToList(todo){
     console.log("setting local storage...");
     if(!localStorage.getItem(toDoListName)){
@@ -16,9 +17,8 @@ export function saveToList(todo){
     }
 }
 
+// Retrieve todos from local storage, parsed to object format according to applied filter (if any)
 export function retrieveList(filter){
-    //console.log(JSON.parse(localStorage.getItem(toDoListName)));
-    //return JSON.parse(localStorage.getItem(toDoListName));
     console.log('filter: ' + filter);
     let list = JSON.parse(localStorage.getItem(toDoListName));
     if(filter != null && filter != "all"){
@@ -35,27 +35,10 @@ export function retrieveList(filter){
     return list;
 }
 
-export function retrieveFilteredList(status){
-    const list = JSON.parse(localStorage.getItem(toDoListName));
-    if(status != "all"){
-        const list = list.map(task=> {
-            if(task.completed === status){
-                return task;
-            }
-        });
-        console.log(filteredList);
-    }
-
-    return list;
-}
-
+// Update todos in local storage that have been checked complete
 export function updateChecked(id){
     let array = JSON.parse(localStorage.getItem(toDoListName));
-    //console.log('Array[0]:')
-    //console.log(array[0]);
     for(let i = 0; i < array.length; i++){
-        //console.log('passed id: ' + id);
-        //console.log(array[0].id);
         if(parseInt(array[i].id, 10) === parseInt(id, 10)){
             if(array[i].completed === false){
                 array[i].completed = true;
@@ -69,18 +52,9 @@ export function updateChecked(id){
     }
 
     localStorage.setItem(toDoListName, JSON.stringify(array));
-    //array = array.map(function(task){
-        //console.log('task: ');
-        //console.log(task);
-        //console.log("index: " + index);
-        //console.log('array[index]');
-        //console.log(array[index]);
-      //  if(task.id === todo.id){
-          //  task = todo;
-        //}
- //   });
 }
 
+// Remove todos from local storage
 export function updateRemove(id){
     let array = JSON.parse(localStorage.getItem(toDoListName));
     
