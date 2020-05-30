@@ -1,5 +1,5 @@
 import { getDOMContent, resetDOMContent } from './utilities.js'
-import { saveToList, retrieveList, updateChecked, updateRemove, retrieveFilteredList } from './ls.js'
+import { saveToList, retrieveList, updateChecked, updateRemove, filterList, retrieveFilteredList } from './ls.js'
 
 export default class ToDo {
     constructor(){
@@ -99,13 +99,14 @@ export default class ToDo {
             filters[i].addEventListener('click', function(e){
                 console.log('e: ' + e.target.id);
                 if(e.target.id === "active"){
+                    //filterList(false);
                     this.showFilteredList(false);
                 }
                 else if(e.target.id === "completed"){
-                    this.showFilteredList(true);
+                    filterList(true);
                 }
                 else{
-                    this.showToDoList();
+                    filterList("all");
                 }
             });
         }  

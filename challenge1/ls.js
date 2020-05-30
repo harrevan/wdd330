@@ -17,20 +17,34 @@ export function saveToList(todo){
 }
 
 export function retrieveList(){
-    console.log(JSON.parse(localStorage.getItem(toDoListName)));
-    return JSON.parse(localStorage.getItem(toDoListName));
+    //console.log(JSON.parse(localStorage.getItem(toDoListName)));
+    //return JSON.parse(localStorage.getItem(toDoListName));
+
+    const list = JSON.parse(localStorage.getItem(toDoListName));
+   // if(status != "all"){
+     //   const list = list.map(task=> {
+       //     if(task.completed === status){
+         //       return task;
+           // }
+       // });
+        //console.log(filteredList);
+    //}
+
+    return list;
 }
 
 export function retrieveFilteredList(status){
     const list = JSON.parse(localStorage.getItem(toDoListName));
-    const filteredList = list.map(task=> {
-        if(task.completed === status){
-            return task;
-        }
-    });
+    if(status != "all"){
+        const list = list.map(task=> {
+            if(task.completed === status){
+                return task;
+            }
+        });
+        console.log(filteredList);
+    }
 
-    console.log(filteredList);
-    return filteredList;
+    return list;
 }
 
 export function updateChecked(id){
