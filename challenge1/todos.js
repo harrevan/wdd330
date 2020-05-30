@@ -40,10 +40,10 @@ export default class ToDo {
         renderToDo(this);
     }
 
-    showToDoList(){
+    showToDoList(filter){
         //this.parentElement.innerHTML = "";
-        if(this.getToDoList(applyFilter()) != null){
-            renderToDoList(document.getElementById("toDoList"), this.getToDoList(applyFilter()));
+        if(this.getToDoList(filter) != null){
+            renderToDoList(document.getElementById("toDoList"), this.getToDoList(filter));
             this.addCheckedListener();
             this.addRemoveListener();
         }
@@ -94,6 +94,7 @@ export default class ToDo {
     }
 
     addFilterEventListener(){
+        const toDo = this;
         const filters = document.getElementsByClassName("filter")
         for(let i = 0; i < filters.length; i++){
             filters[i].addEventListener('click', function(e){
@@ -101,7 +102,8 @@ export default class ToDo {
                 if(e.target.id === "active"){
                     //filterList(false);
                     //this.showFilteredList(false);
-                    applyFilter(false);
+                    //applyFilter(false);
+                    this.showToDoList(false);
                 }
                 else if(e.target.id === "completed"){
                     //filterList(true);
