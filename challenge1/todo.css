@@ -60,9 +60,9 @@ ul li {
 .filter {
   padding-top: 12px;
   padding-bottom: 12px;
-  font-size: 14px;
+  font-size: 10px;
   margin-left: 15px;
-  width: 90px;
+  width: 60px;
 }
 
 #filterActions{
