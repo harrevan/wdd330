@@ -17,7 +17,7 @@ ul {
   list-style-type: none;
 } 
 
-ul li, span {
+ul li {
   cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 40px;
@@ -47,4 +47,9 @@ ul li, span {
   transition: 0.2s;
   text-decoration: line-through;
 
+}
+
+span {
+  position: relative;
+  left: 60px;
 }
