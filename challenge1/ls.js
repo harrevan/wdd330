@@ -13,7 +13,6 @@ export function saveToList(todo){
         storageArray.push(todo);
         localStorage.setItem(toDoListName, JSON.stringify(storageArray));
         console.log(storageArray);
-
     }
 }
 

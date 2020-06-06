@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 07</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src='examples.js'></script>
+</head>
+<body>
+    <div class="header">
+        <p>Javascript: Novice to Ninja Chapter 11: Further Functions</p>
+    </div> 
+    <h1>Function Properties and Methods</h1>
+    <p>Functions can have properties and methods since they are first-class objects.</p>
+    <h2>Call and Apply Methods</h2>
+    <p>call() method used to set value of <i>this</i> inside a function to an object provided as first argument. (See console for examples.)</p>
+    <p>
+        If the function that is called requires parameters, these shlud be provided to the call() function after the first argument. If the function
+        doesn't refer to an object as <i>this</i> in its body, it can still be called using call(), but null must be the first argument.
+    </p>
+    <p>apply() works in a similar way, but the arguments of the function are provided as an array.</p>
+    <h2>Custom Properties</h2>
+    <p>You can add your own properties to functions just like any other object.</p>
+    <h3>Custom properties can be used for memoization, or caching</h3>
+    <h1>Immediately Invoked Function Expressions</h1>
+    <p>An IIFE is "an anonymous function that, as the name suggests, is invoked as soon as it’s defined" </p>
+    <p>This can be done by invoking it (parenthesis at end of function) and making it into an expression by surrounding it in parenthesis</p>
+    <h1>Functions that Define and Rewrite Themselves</h1>
+    <p>By assigning an anonymous function to a variable with the same name as the function, the funciton can define, redefine, and call itself.</p>
+    <p>This is the Lazy Definition pattern, helpful when initialization code is required the first time a function is invoked, and subsequent invocations require a new definition.</p>
+    <h2>Init-Time Branching</h2>
+    <p>Technique used to create functions that rewrite themselves.</p>
+    <p>Enables functions to work more effectively in the browser.</p>
+    <h1>Questions</h1>
+    <p>Why would one need to use IFFEs?</p>
+    <h2>Recursive Functions</h2>
+    <p>Function that invokes itself until a certain condition is met. Useful for iterative processes.</p>
+    <h1>Callbacks and Promises: see console and examples.js for examples</h1>
+    <h2>Async Functions</h1>
+    <p>Functions are preceeded by async, and allow asynchronous code to be written synchronously.</p>
+    <p>await operator used before function wraps return value in a promise that can be assigned to a variable. The next line of code is not executed until the promise resolves.</p>
+    <h2>Generalized Functions</h2>
+    <p>See examples.js.</p>
+    <h1>Closures</h1>
+    <p>References to variables created inside the scope of another function, but is kept alive and used in another part of the program</p>
+    <p>
+        "One of the key principles in creating closures is that an “inner” function, which
+        is declared inside another function, has full access to all of the variables declared
+        inside the scope of the function in which it’s declared (the “outer” function)."
+    </p>
+    <h2>Returning Funcitons</h2>
+    <p>
+        "A closure is formed when the inner function is returned by the outer function,
+        maintaining access to any variables declared inside the enclosing function."
+    </p>
+    <h1>Functional Programming</h1>
+    <p>JavaScript is a multi-paradigm language (supports procedural, functional, and object oriented programing paradigms)</p>
+    <h2>Pure Functions</h2>
+    <p>Functional programming uses pure functions. Rules include:</p>
+    <ul>
+        <li>Return value should only depend on the values provided as arguments</li>
+        <li>There are no side-effects, doesn't change values or data anywhere else.</li>
+        <li>Referential transparency, given the same arguments a pure function always returns same value.</li>
+    </ul>
+
+</body>
+</html>
