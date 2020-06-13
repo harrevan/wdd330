@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 08</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .myCanvas {
+            border: dotted 2px black;
+            margin: 0 20px;
+        }
+        .spin {
+            position: absolute;
+            top: 8px;
+            left: 55px;
+        }       
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p>HTML5 and CSS3 for the Real world: Ch 12: Canvas, SVG, and Drag and Drop </p>
+    </div> 
+    <h1>Canvas</h1>
+    <canvas id="myCanvas" class="myCanvas" width="200" height="200">
+        Your browser does not support Canvas.
+    </canvas>
+    <canvas id="demo2" class="myCanvas" width="200" height="200">
+        Your browser does not support Canvas.
+    </canvas>
+    <canvas id="demo3" class="myCanvas" width="200" height="200">
+        Your browser does not support Canvas.
+    </canvas>
+    <h2>Saving Canvas Demo</h2>
+    <canvas id="demo4" class="myCanvas" width="200" height="200">
+        Your browser does not support Canvas.
+    </canvas>
+    <button name="saveButton" id="saveButton">Save Drawing</button>
+    <h2>Drawing an Image</h2>
+    <canvas id="demo5" class="myCanvas" width="200" height="200">
+        Your browser does not support Canvas.
+    </canvas>
+    <img src="logo.JPG" id="imageElem">
+    <h2>Manipulating Images</h2>
+    <canvas id="demo6" class="myCanvas" width="200" height="200">
+        Your browser does not support Canvas.
+    </canvas>
+    <h1>SVG- Scalable Vector Graphics</h1>
+    <p>Vector images preserve their quality even when resized, unlike bitmap images like GIF, JPEG, PNG, and TIFF</p>
+    <img src='svg.svg'> 
+    <script src="canvas.js"></script>
+    <h1>Drag and Drop</h1>
+    <p>API, supported in Chrome, firefox, and safari, not supported by Android and iOS</p>
+    <p>2 kinds of functionality: dragging files from a computer into a web page (use with File API) or dragging elements into other elements on the same page</p>
+    
+</body>
+</html>

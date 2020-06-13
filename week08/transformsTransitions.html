@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 08</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src='examples.js'></script>
+    <style>
+        #ad1 {
+            width: 350px;
+            height: 200px;
+            background-color: lightgray;
+            padding-left: 10px;
+        }
+        #dukes:hover span{
+            color: #484848;
+            display: inline-block;
+            font-size: 30px;
+            transform: translateX(40px);
+        }
+        #dukes2:hover span{
+            color: #484848;
+            display: inline-block;
+            font-size: 30px;
+            transform: translateX(40px) scale(1.5);
+        }
+        #dukes3:hover span{
+            color: #484848;
+            display: inline-block;
+            font-size: 30px;
+            transform:  translateX(40px) scale(1.5) rotate(10deg);
+        }
+        #dukes4:hover span{
+            color: #484848;
+            display: inline-block;
+            font-size: 30px;
+            transform:  translateX(40px) scale(1.5) skew(15deg, 4deg);
+        }
+        #fighter{
+            width: 200px;
+            height: 200px;
+            float:left;
+            margin-right: 15px;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            transition: width 3s;
+            color:white;
+        }
+        #ptransition{
+            font-size:12pt;
+            color: gray;
+            transition-property: transform, color;
+            transition-duration: 1s;
+            transition-delay: 1s;
+        }
+        #ptransition:hover{
+            color:red;
+        }
+        #ptransition2{
+            font-size:12pt;
+            color: gray;
+            transition-property: transform, color;
+            transition-duration: 0.2s, 0.1s;
+            transition-timing-function: ease-out, linear;
+            transition-delay: 50ms;
+        }
+        #ptransition2:hover{
+            color:red;
+        }
+
+        #div1 {transition-timing-function: linear;}
+        #div2 {transition-timing-function: ease;}
+        #div3 {transition-timing-function: ease-in;}
+        #div4 {transition-timing-function: ease-out;}
+        #div5 {transition-timing-function: ease-in-out;}
+        div:hover{
+            width:500px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <h1>HTML5 and CSS3 for the Real world: Chapter 8: Transforms and Transitions </h1>
+
+    <h1>Transforms (hover over images to see effects)</h1>
+    <p>CSS3 <i>transform</i> property allows translocation, rotation, saling, or skewing of any element on a page.</p>
+    <p>Element's appearance can be manipulated using <b>transform functions</b>. Transform functions are applied in order.</p>
+    <h2>Translation</h2>
+    <div id='ad1'>
+        <h1 id='dukes'><img id='fighter'src='dukes.png'>PUT YOUR <span>DUKES</span> UP, SIRE</h1>
+    </div>
+    <h2>Scaling</h2>
+    <div id='ad1'>
+        <h1 id='dukes2'><img id='fighter'src='dukes.png'>PUT YOUR <span>DUKES</span> UP, SIRE</h1>
+    </div>
+    <p>*Note: both translation and scaling have no impact on document flow. Text around inline-blocks elements will fail to accomodate it with reflowing. Ex:</p>
+    <img src=scaleFail.png>
+    <h2>Rotation</h2>
+    <div id='ad1'>
+        <h1 id='dukes3'><img id='fighter'src='dukes.png'>PUT YOUR <span>DUKES</span> UP, SIRE</h1>
+    </div>
+    <h2>Skew</h2>
+    <div id='ad1'>
+        <h1 id='dukes4'><img id='fighter'src='dukes.png'>PUT YOUR <span>DUKES</span> UP, SIRE</h1>
+    </div>
+    <h1>Transitions</h1>
+    <p>A smoother way to implement animations</p>
+    <p>
+        Steps: 1) Declare original state of element in the default style declaration.
+        <br>2) Declare final state of transitioned element
+        <br>3) Include transition functions using transition properties like transition-property, transition-duration, transition-delay, etc. 
+    </p>
+    <h2>transition-property</h2>
+    <p>If there is a valid midpoint, it can be transitioned, typically</p>
+    <h2>transition-duration Property</h2>
+    <div>
+        Hover over me!
+    </div>
+    <h2> transition-timing-function Property</h2>
+    <div id="div1">linear</div><br>
+    <div id="div2">ease</div><br>
+    <div id="div3">ease-in</div><br>
+    <div id="div4">ease-out</div><br>
+    <div id="div5">ease-in-out</div><br>
+    <h2>transition-delay Property</h2>
+    <p id="ptransition">Hover on me!</p>
+    <h2>Multiple Transitions</h2>
+    <p id="ptransition2">Hover on me to see multiple transitions</p>
+    <h1>Moving On</h1>
+    <p>Use transforms, transitions, and animations only where they make sense. Skip them everywhere else.</p>
+</body>
+</html>
