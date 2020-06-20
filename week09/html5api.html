@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 07</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        #square {
+            margin: 100px;
+            width: 100px;
+            height: 100px;
+            background: #d16;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p>Javascript: Novice to Ninja Chapter 14: HTML5 APIs</p>
+    </div> 
+    <h1>The data- Attribute</h1>
+    <p>Way of embeding data on a web page. Ignored by browser, sole purpose is JavaScript use.</p>
+    <p>Named by developer: ex: data-powers</p>
+    <h1>HTML5 APIs</h1>
+    <h2>HTML5 Web Storage</h2>
+    <p>window.localStorage</p>
+    <h2>Geolocation</h2>
+    <p>Obtain geographical position of device. Requires user permission first.</p>
+    <p>Is a property of navigator object: EX: navigator.geolocation.getCurrentPosition(youAreHere);</p>
+    <h2>Web Workers</h2>
+    <p>Allow processes to run in background, adding concurrency in JavaScript.</p>
+    <h2>Websockets</h2>
+    <p>New protocol allowing 2-way communication with a server, aka push messaging.</p>
+    <form>
+        <label for='message'>Enter a Message:</label>
+        <input type='text' name='message'>
+        <button type='submit'>Submit</button>
+    </form>
+    <div id='output'></div>
+    <h2>Notifications</h2>
+    <p>Displayed evin if web page calling them isn't in current tab.</p>
+    <p>Requires user permission first.</p>
+    <h2>Multimedia</h2>
+    <p>Allows insertion of audio or video clips into a web page.</p>
+    <h1>Other APIs</h1>
+    <h2>Canvas</h2>
+    <p>See last week for canvas demo.</p>
+
+    <script src='htmlapi.js'></script>
+</body>
+
+</html>

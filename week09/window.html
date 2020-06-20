@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 07</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        #square {
+            margin: 100px;
+            width: 100px;
+            height: 100px;
+            background: #d16;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <p>Javascript: Novice to Ninja Chapter 9: The Window Object</p>
+    </div> 
+    <p>Every JavaScript environment has a global object. The window object is the global object in a browser environment. </p>
+    <h1>The Browser Object Model</h1>
+    <p>Collection of properties and methods containing info about the browser and computer screen.</p>
+    <h2>Going Global</h2>
+    <p>Global variables accessed in all parts of program. Created without const, let, or var keywords. These global variables are properties of global objects (the window object.) See log for example.</p>
+    <h2>Dialogs</h2>
+    <p>Examples: window.alert(), window.confirm(), window.prompt()</p>
+    <h1>Browser Information</h1>
+    <p>window object has properties and methods to provide info about a user's browser.</p>
+    <h2>Which Browser?</h2>
+    <p>window.navigator.user agent</p>
+    <p>Returns info about user's browser. Can be modified by user, so not reliable.</p>
+    <h2>Location</h2>
+    <p>window.location property contains info about URL of current page.</p>
+    <h2>Browser History</h2>
+    <p>window.history can be used to access info about previously visited pages in current browser session.</p>
+    <h2>Controlling Windows</h2>
+    <p>window.open() opens a new window in the browser. Takes a URL as a parameter. window.close() closes a window</p>
+    <h1>Screen Information</h1>
+    <p>Use window.screen information to gather info about screen, such as height, width in pixles, etc.</p>
+    <h1>Document Object</h1>
+    <p>window objects contain a document object. Document object has properties/methods to deal with page loded into window.</p>
+    <h2>Cookies</h2>
+    <p>Small files saved locally on a user's computer. Used to store information between requests. Used specifically for personalizing browser experience, storing preferences, keeping track of user decisions (shopping cart), authentication...</p>
+    <p>Take the form of text files with name/value pairs.</p>
+    <p>Sessions by default, they are deleted once window closes. Can be made persistnet using exires=date.</p>
+    <h1>Timing Functions</h1>
+    <p>Example:</p>
+    <div id='square'></div>
+    <div id='square2'></div>
+
+
+
+
+
+
+
+
+
+
+
+    <script src='09examples.js'></script>
+</body>
+
+</html>
