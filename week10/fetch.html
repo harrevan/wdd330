@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 10</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="header">
+        <p>MDN Using Fetch</p>
+    </div> 
+    <h1>Fetch API</h1>
+    <p>Prrovides a JavaScript interface for accessing and manipulating parts of HTTP pipeline (requests, responses, etc.)</p>
+    <p>Provides global fetch() method providing a way to fetch resources asynchronously across the network.</p>
+    <p>Provides a better alternative to XMLHttpRequest.</p>
+    <p>
+        fetch differs from jQuery.ajax() in 3 main ways:<br>
+        1.) Promise returned from fetch() won't reject HTTP on error status, only on network failure or if request is prevented from completing.<br>
+        2.) fetch() won't receive cross-site cookies.
+        3.) fetch w+on't send cookies.
+    </p>
+    <h2>Supplying request options</h2>
+    <p>fetch() can accept a second paramater, an init object that allows you to control certain settings</p>
+    <h2>Sending request with credentials included</h2>
+    <p>add credentials: 'include' to init object passed to the fetch method.</p>
+    <h2>Uploading JSON data</h2>
+    <p>fetch() can POST JSON-encoded data.</p>
+    <h2>Files</h2>
+    <p>fetch() can be used to upload one or multiple files when used with correct input elements</p>
+    <h1>Headers</h1>
+    <p>Headers interface allows you to create a headers object. A headers object is a multi-map of names to values.</p>
+    <h1>Response Objects</h1>
+    <p>Response instances are returned when fetch() promises are resolved. Most common response proberties are Response.status, Response.statusText, Response.ok</p>
+    <h1>Body</h1>
+    <p>Requests and responses can contain body data. Body is an instance of: ArrayBuffer, ArrayBufferView, Blob, string, URLSearchParams, or FormData.</p>
+</body>
+
+</html>
