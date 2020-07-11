@@ -1,0 +1,30 @@
+body {
+    /*background-color: #116466;*/
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(to bottom right, #2C3531, #116466, #D1E8E2);
+}
+.jumbotron {    
+    text-align: center;
+    color: white;
+    background-color: #2C3531;
+}
+#indexButtons {
+    text-align: center;
+}
+.custom {
+    width: 200px;
+    margin-bottom: 25px;
+    margin-left: 10px;
+}
+.centerText{
+    text-align: center;
+}
+label{
+    color:white;
+}
+.form-group{
+    margin: 10px;
+}
