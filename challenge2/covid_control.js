@@ -30,29 +30,29 @@ class CovidStats{
         }
       }
       getDataDate(){
-        return getCovidData(this.typePath + this.timePath).then(response => console.log("date " + response[0].dateChecked));
+        getCovidData(this.typePath + this.timePath).then(response => console.log("date " + response[0].dateChecked));
       }
 
       getDeathCount(){
-        return getCovidData(this.typePath + this.timePath).then(response => console.log("dead" + response[0].death));
+         getCovidData(this.typePath + this.timePath).then(response => console.log("dead" + response[0].death));
       }
 
       getRecoveries(){
-        return getCovidData(this.typePath + this.timePath).then(response => console.log("recovered" + response[0].recovered));
+        getCovidData(this.typePath + this.timePath).then(response => console.log("recovered" + response[0].recovered));
       }
       
       getHospitalized(){
-        return getCovidData(this.typePath + this.timePath).then(response => console.log("hospitalized" + response[0].hospitalizedCurrently));
+        getCovidData(this.typePath + this.timePath).then(response => console.log("hospitalized" + response[0].hospitalizedCurrently));
       }
 
       getPositiveTests(){
-        return getCovidData(this.typePath + this.timePath).then(response => console.log("+ tests" + response[0].positive));
+        getCovidData(this.typePath + this.timePath).then(response => console.log("+ tests" + response[0].positive));
       }
 
 }
 
 //testing
-const stat = new CovidStats("usa", "positive");
+const stat = new CovidStats("usa", "daily");
 stat.getDataDate();
 stat.getDeathCount();
 stat.getHospitalized();
