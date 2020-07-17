@@ -15,14 +15,14 @@
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1>State Covid-19 Statistics</h1> 
+          <h2>State Covid-19 Statistics</h2> 
         </div>
     </div>
     <button type="button" class="btn btn-secondary btn-sm custom" id="national">National Data</button>
     <div class="form-group">
         <label for="selectedState">Select a state</label>
         <select class="form-control" id="selectedState">
-            <option value="AL">Alabama</option>
+            <option selected="selected" value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
             <option value="AR">Arkansas</option>
@@ -73,7 +73,10 @@
             <option value="WV">West Virginia</option>
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
-        </select>
+        </select>       
+    </div>
+    <div>
+        <h3 id="stateDataDate"></h3>
     </div>
     <script src="covid_control.js " type="module"></script>
 </body>

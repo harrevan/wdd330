@@ -5,11 +5,15 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-image: linear-gradient(to bottom right, #2C3531, #116466, #D1E8E2);
+    padding:0;
 }
 .jumbotron {    
     text-align: center;
     color: white;
     background-color: #2C3531;
+    height: 15%; 
+    width: 100%;
+    padding: 20px;
 }
 #indexButtons {
     text-align: center;
@@ -28,3 +32,33 @@ label{
 .form-group{
     margin: 10px;
 }
+
+.btn-dark{
+    background-color: #2C3531;
+    height:100%;
+    width:100%;
+}
+.card-header{
+    background-color: #2C3531;        
+}
+
+
+.buttonStat{
+    height:100%;
+    width:100%;
+}
+.card-body{
+    padding:0px;
+    margin:0px;
+    width:100%;
+    height:100%;
+}
+.accordion, .card-header, .card, .collapse{
+    padding:0px;
+    margin:0px;
+} 
+.chart{
+    width:400px;
+    height:900px;
+}
+
