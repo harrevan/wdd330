@@ -1,17 +1,6 @@
 import { getCovidData } from "./data.js";
 
-//const usaDeaths = document.getElementById("usCases");
-//const usaCases = document.getElementById("usDeaths");
-//const usaRecoveries = document.getElementById("usRecoveries");
-//const usaHospitalized = document.getElementById("usHospitalized");
-
-//const stateDeaths = document.getElementById("stateCases");
-//const stateCases = document.getElementById("stateDeaths");
-//const stateRecoveries = document.getElementById("stateRecoveries");
-//const stateHospitalized = document.getElementById("stateHospitalized");
-//const selectedState = document.getElementById("selectedState").value;
-//const currentStatsLocation = document.querySelectorAll(".collapsed");
-//const dailyStatsLocation = document.querySelectorAll(".card-body");
+// Class to represent key covid statistics
 export default class CovidStats{
     constructor(type, time, state) {
         this.type = type;
@@ -19,6 +8,7 @@ export default class CovidStats{
         this.timePath = "";
         this.typePath = "";
 
+        // Route to correct url according to type (national or state) and time (current, daily)
         if(this.type === "usa"){
             this.typePath = "api/v1/us/";
         }
@@ -35,68 +25,83 @@ export default class CovidStats{
       }
 
       separateStats(id, label){
-        getCovidData(this.typePath + this.timePath).then(response => displayStat(id, this.type, this.time, response, label));
+            // id's from index.html match stat name from API. Used to determine which stat to display and where
+            getCovidData(this.typePath + this.timePath).then(response => displayStat(id, this.type, this.time, response, label));
+      }
+
+      getStatDate(elemId){
+            getCovidData(this.typePath + this.timePath).then(response => displayDate(elemId, this.type, response));
       }
 
       showAllData(){
         if(this.time === "current"){
-            const currentStatLocation = document.querySelectorAll(".collapsed");
-            //this.showDataDate(currentStatLocation[0].id);
-            //console.log(currentStatLocation[0].id);
+            const currentStatLocation = document.querySelectorAll(".currentStats");
+            const dateLocation = document.getElementById("date");
+            this.getStatDate(dateLocation);
             this.separateStats(currentStatLocation[0].id, "Total positive tests: ");
             this.separateStats(currentStatLocation[1].id, "Total deaths: ");
             this.separateStats(currentStatLocation[2].id, "Total currently hospitalized: ");
             this.separateStats(currentStatLocation[3].id, "Total recovered: ");
+            this.separateStats(currentStatLocation[4].id, "Positive test increase from previous day: ");
+            this.separateStats(currentStatLocation[5].id, "Death increase from previous day: ");
+            this.separateStats(currentStatLocation[6].id, "Hospitalized increase from previous day: ");
 
         }
         else {
-            const historicalStatLocation = document.querySelectorAll(".card-body");
-            //console.log("stat2"+ historicalStatLocation[1].id);
+            const historicalStatLocation = document.querySelectorAll(".dailyStats");
             this.separateStats(historicalStatLocation[0].id);
-
             this.separateStats(historicalStatLocation[1].id);
             this.separateStats(historicalStatLocation[2].id);
             this.separateStats(historicalStatLocation[3].id);
+            this.separateStats(historicalStatLocation[3].id);
+            this.separateStats(historicalStatLocation[3].id);
+            this.separateStats(historicalStatLocation[3].id);
+            this.separateStats(historicalStatLocation[4].id);
+            this.separateStats(historicalStatLocation[5].id);
+            this.separateStats(historicalStatLocation[6].id);
         }
       }
 }
 
-//testing
-//const stat = new CovidStats("usa", "current");
-//const stat = new CovidStats("usa", "daily");
-//stat.showAllData();
+// Display date that data was last retrieved
+function displayDate(elemId, type, stats){
+    if(type === "usa"){
+        console.log(stats[0].date)
+        elemId.innerHTML = "Data as of " + formatDate(stats[0].date.toString()).toDateString();
+    }
+    else if(type === "state"){
+        elemId.innerHTML = "Data as of " + formatDate(stats.date.toString()).toDateString();
+    }
+}
+
+// Determine which stat type to display: current or historical
 function displayStat(id, type, time, stat, label){
     if(time === "current"){
         displayCurrentStats(id, type, stat, label);
     }
     else{
-        //console.log(stat);
-        displayHistoricalStats(id, type, stat, label);
+        displayHistoricalStats(id, stat);
     }
 }
 
-function displayStateStats(){
-
-}
-
+// Display current stats
 function displayCurrentStats(elemId, type, stat, label){ 
     const id = document.getElementById(elemId);
-    console.log(stat);
     const statId = id.id;
-    console.log(statId);
-    console.log(stat[0]);
     if(type === "usa"){
         id.innerHTML = label + formatNumber(stat[0][statId]);
     }
     if(type === "state"){
       id.innerHTML = label + formatNumber(stat[statId]);
     }
-
 }
 
 function formatNumber(number){
-    if(number){
+    if(number > 0){
       return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    else if(number === 0){
+        return number;
     }
     else{
       return "currently NA";
@@ -104,78 +109,41 @@ function formatNumber(number){
 
 }
 
-function displayHistoricalStats(elemId, type, stat, label){
-    console.log(stat);
+// Display historical stats in form of chart
+function displayHistoricalStats(elemId, stat){
     const chartElemId = document.getElementById(elemId);
     const statId = chartElemId.id;
     const newStatId = statId.replace("Chart", "");
-    console.log("newStatId " + newStatId);
 
-    console.log(stat);
-
+    //Use google charts as chart source
     google.charts.load('current', {'packages':['annotationchart']});
     google.charts.setOnLoadCallback(function(){drawChart(newStatId, stat, chartElemId);});
-
 }
 
 // Draw the chart and set the chart values
 function drawChart(stat, statArray, elemId) {
-  console.log("stat: " + stat);
-  console.log(elemId)
   var data = new google.visualization.DataTable();
   data.addColumn("date", "Date");
   data.addColumn("number", stat);
-  console.log(statArray[0].date)
-  //let dayCounter = 1;
   for (let i = 0; i < statArray.length; i++){
       data.addRows([[formatDate(statArray[i].date.toString()), statArray[i][stat]]]);
-      //dayCounter ++;
   }
-  //data.addcolumn("number", currentDataArray.)
 
   const startDate = formatDate(statArray[0].date.toString());
   const endDate = formatDate(statArray[statArray.length - 1].date.toString());
   var options = {
-    //chartArea: { width: "20%", height: "50%" },
-    displayLegendDots: false,
-    //legend: {position: "none"},
-    width: 380
-
+    width: 460
   };
-  
-  //var chart2 = new google.charts.Line(document.elemId); 
-  console.log(elemId);
-  //var chart2 = new google.visualization.LineChart(document.getElementById("tester"));
-  //chart2.draw(data, options);
+
   var chart = new google.visualization.AnnotationChart(elemId);
   chart.draw(data, options);
-  
-  
-
-  //var chart3 = new google.visualization.LineChart(document.getElementById("testing"));
-  //chart3.draw(data, options);
-
-// Display the chart inside the <div> element with id="piechart"
-//var chart = new google.visualization.PieChart(document.getElementById('positiveChart'));
-//chart.draw(data, options);
 }
 
-//google.charts.setOnLoadCallback(drawChart);
-
-// Redirect to National or State Data
-const buttons = document.querySelectorAll(".custom");
-buttons.forEach(button =>
-    button.addEventListener("click", function(){
-    location.href = button.id + ".html";
-}));
-
+// Format date string from API as a usable date
 function formatDate(dateString){
-    console.log(dateString);
     const year = parseInt(dateString.substr(0,4));
     const month = parseInt(dateString.substr(4,2));
     const day = parseInt(dateString.substr(6,2));
-    console.log(year + " " + month + " " + day)
-
-    const date = new Date(year, month, day);
+    const date = new Date(year, month - 1, day);
     return date;
 }
