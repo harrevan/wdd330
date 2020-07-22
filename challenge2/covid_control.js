@@ -96,6 +96,7 @@ function displayCurrentStats(elemId, type, stat, label){
     }
 }
 
+// Format displayed statistic in a more readable format
 function formatNumber(number){
     if(number > 0){
       return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -120,7 +121,7 @@ function displayHistoricalStats(elemId, stat){
     google.charts.setOnLoadCallback(function(){drawChart(newStatId, stat, chartElemId);});
 }
 
-// Draw the chart and set the chart values
+// Draw google chart and set the chart values
 function drawChart(stat, statArray, elemId) {
   var data = new google.visualization.DataTable();
   data.addColumn("date", "Date");
