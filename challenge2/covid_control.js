@@ -70,7 +70,7 @@ function displayDate(elemId, type, stats){
         elemId.innerHTML = "USA data as of " + formatDate(stats[0].date.toString()).toDateString();
     }
     else if(type === "state"){
-        elemId.innerHTML = "Data in " + stats.state + " as of " + formatDate(stats.date.toString()).toDateString();
+        elemId.innerHTML = stats.state + " Data as of " + formatDate(stats.date.toString()).toDateString();
     }
 }
 
