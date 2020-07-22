@@ -67,10 +67,10 @@ export default class CovidStats{
 function displayDate(elemId, type, stats){
     if(type === "usa"){
         console.log(stats[0].date)
-        elemId.innerHTML = "Data as of " + formatDate(stats[0].date.toString()).toDateString();
+        elemId.innerHTML = "USA data as of " + formatDate(stats[0].date.toString()).toDateString();
     }
     else if(type === "state"){
-        elemId.innerHTML = "Data as of " + formatDate(stats.date.toString()).toDateString();
+        elemId.innerHTML = "Data in " + stats.state + " as of " + formatDate(stats.date.toString()).toDateString();
     }
 }
 
