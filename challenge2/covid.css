@@ -13,9 +13,6 @@ body {
     width: 100%;
     padding: 20px;
 }
-#indexButtons {
-    text-align: center;
-}
 .custom {
     width: 150px;
     margin-bottom: 25px;
@@ -40,8 +37,6 @@ label{
 .card-header{
     background-color: #2C3531;        
 }
-
-
 .buttonStat{
     height:100%;
     width:100%;
@@ -70,8 +65,5 @@ label{
     color:white;
     font-size: 20px;
     font-style: italic;
-    text-align:center;
-}
-#indexButtons{
     text-align:center;
 }
